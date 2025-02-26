@@ -1,0 +1,6 @@
+torch==2.6.0+cu118
+fastchat==0.1.0
+pstuil
+transformers
+accelerate
+sentencepiece
