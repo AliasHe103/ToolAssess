@@ -6,7 +6,7 @@ if os.environ.get("OPENAI_API_KEY") is None:
 
 models_mapping = [
     "gpt-4",
-    "gpt-3.5-turbo.5",
+    "gpt-3.5-turbo",
 ]
 
 tool_description_prompt = '''

@@ -1,7 +1,16 @@
 TEST_DATA_PATH = "data/simple_test.json"
 TEST_OUTPUT_PATH = "result/"
+# summarization
 ORG_TOOLS_DATA_PATH = "data/tools_with_original_descriptions.json"
 SUMMARIZED_TOOLS_PATH = "data/tools_with_summarized_descriptions.json"
+# single task
+SINGLE_TASK_DATA_SIZE = 50
+SINGLE_TASK_DATA_PATH = "data/single_task.json"
+SINGLE_TASK_OUTPUT_PATH = "result/single_task/"
+# multi task
+MULTI_TASK_DATA_SIZE = 5
+MULTI_TASK_DATA_PATH = "data/multi_task.json"
+MULTI_TASK_OUTPUT_PATH = "result/multi_task/"
 
 SUPPORTED_MODELS = {
     "Llama-2-7b-chat-hf": "meta-llama/Llama-2-7b-chat-hf",

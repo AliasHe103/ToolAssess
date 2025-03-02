@@ -1,5 +1,17 @@
+import argparse
 import os
 
-model_path = "lmsys/vicuna-7b-v1.3"
-print("You are running the test on model {}".format(model_path))
-os.system("python -m generation_test --model {}".format(model_path))
+parser = argparse.ArgumentParser()
+parser.add_argument("task")
+args = parser.parse_args()
+
+if args.task == "summarization":
+    os.system("python -m generation_test")
+elif args.task == "task_generation":
+    os.system("python -m inference.process.task_generation")
+elif args.task == "test_json":
+    os.system("python -m test.test_json")
+elif args.task == "assess":
+    os.system("python -m assess_framework.assess.deepseek_assess")
+else:
+    raise ValueError("Invalid task!")

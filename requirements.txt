@@ -1,6 +1,13 @@
-torch==2.6.0+cu118
-fastchat==0.1.0
-pstuil
+torch
+fastchat
 transformers
 accelerate
 sentencepiece
+openai
+langgraph
+langchain-openai
+ipython
+langchain-community
+langchain-core
+langchain-experimental
+scikit-learn
