@@ -78,20 +78,6 @@ optimize_results(true_results, test_results)
 print(true_results)
 print(test_results)
 
-# TP, FN, FP, TN = 0, 0, 0, 0
-# for i in range(len(true_results)):
-#     if true_results[i] == "true tool":
-#         if test_results[i] == "true tool":
-#             TP += 1
-#         else:
-#             FN +=1
-#     else:
-#         if test_results[i] == "true tool":
-#             FP += 1
-#         else:
-#             TN += 1
-# print(f"TP: {TP}, FN: {FN}, FP: {FP}, TN: {TN}")
-
 metrics = evaluate_model(true_results, test_results)
 for metric, value in metrics.items():
     print(f"{metric}: {value:.4f}")

@@ -4,10 +4,6 @@ from openai import OpenAI
 
 from config import settings
 
-key = os.environ.get("DEEP_SEEK_API_KEY")
-if key is None:
-    raise ValueError("DEEP_SEEK_API_KEY is not set!")
-
 models_mapping = {
     "deepseek-chat": "DeepSeek-V3",
     "deepseek-reasoner": "DeepSeek-R1"
@@ -39,7 +35,7 @@ if not os.path.exists(output_path):
 with open(sample_file, "r", encoding="utf-8") as f:
     samples = json.load(f)
 
-client = OpenAI(api_key=key, base_url="https://api.deepseek.com")
+client = OpenAI(api_key=settings.deepseek_api_key, base_url="https://api.deepseek.com")
 
 results = {}
 def assess_on_deepseek():

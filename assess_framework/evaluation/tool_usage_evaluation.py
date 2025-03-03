@@ -33,9 +33,9 @@ def get_test_results():
 
 def evaluate_model(r_true, r_pred):
     accuracy = accuracy_score(r_true, r_pred)
-    precision = precision_score(r_true, r_pred, average='weighted', pos_label="requires tool")
-    recall = recall_score(r_true, r_pred, average='weighted', pos_label="requires tool")
-    f1 = f1_score(r_true, r_pred, average='weighted', pos_label="requires tool")
+    precision = precision_score(r_true, r_pred, average='weighted')
+    recall = recall_score(r_true, r_pred, average='weighted')
+    f1 = f1_score(r_true, r_pred, average='weighted')
 
     return {
         "Accuracy": accuracy,

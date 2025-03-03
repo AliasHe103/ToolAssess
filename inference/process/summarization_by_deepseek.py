@@ -3,10 +3,6 @@ from openai import OpenAI
 
 from config import settings
 
-key = os.environ.get("DEEP_SEEK_API_KEY")
-if key is None:
-    raise ValueError("DEEP_SEEK_API_KEY is not set!")
-
 task_prompt = '''
 You are tasked with summarizing tool descriptions. For each tool, you are provided with a long description that includes its name, features, and use cases. Your goal is to condense the original description into a concise, clear, and machine-readable summary that focuses on the core functionality of the tool. The summary should highlight what the tool does, its main purpose, and how it helps a Large Language Model (LLM) deal with a user's query. Avoid including unnecessary details or redundant information.
 
@@ -36,7 +32,7 @@ with open(settings.ORG_TOOLS_DATA_PATH, 'r', encoding='utf-8') as jf:
     inputs = json.dumps(data, ensure_ascii=False)
 
 print("Start generating.")
-client = OpenAI(api_key=key, base_url="https://api.deepseek.com")
+client = OpenAI(api_key=settings.deepseek_api_key, base_url="https://api.deepseek.com")
 completion = client.chat.completions.create(
     model="deepseek-reasoner",
     messages=[

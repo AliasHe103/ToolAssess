@@ -10,9 +10,6 @@ DOMAIN_DIST = {
     'daily_life': 0.05
 }
 
-if os.environ.get("OPENAI_API_KEY") is None:
-    raise ValueError("OPENAI_API_KEY is not set!")
-
 with open(settings.SUMMARIZED_TOOLS_PATH, 'r', encoding='utf-8') as jf:
     data = json.load(jf)
     base_toolset = json.dumps(data, ensure_ascii=False)
@@ -29,11 +26,14 @@ The possible task outcomes should fall into three categories:
 3. **Task cannot be completed, even with tools** - The query cannot be solved, even if the provided tools are used.
 
 Ensure:
-- **Generate exactly {num_tasks} tasks.** 
-- **Exactly one tool** should be relevant in "requires tool" cases. Other tools must be unrelated.
-- **At least 20% of the tasks must include exactly 3 tools.**
-- **Tasks that require only basic reasoning or common knowledge (e.g., simple math, general facts) should be classified as "no tool".**
-- **"Cannot be completed" cases should be tasks that remain impossible, even with the provided tools.**
+- **Generate exactly {num_scenarios} multi-task scenarios.**
+- **Each scenario should contain 2-4 logically related tasks.**
+- **Each scenario should have 3-5 tools assigned.**
+- **In "requires tool" cases, exactly one tool should be relevant per sub-task. Other tools must be unrelated.**
+- **Scenarios with 3 tools must not exceed 50% of the total scenarios and 30% at least.**
+- **Scenarios with 4 tools and 5 tools should have approximately equal distribution.**
+- **Tasks requiring basic reasoning or common knowledge (e.g., simple math, general facts) should be classified as "no tool" and explicitly include "solving_tool": ""**
+- **"Cannot be completed" cases should be tasks that remain impossible, even with the provided tools. Always include "solving_tool": "" explicitly.**
 
 Format:
 
@@ -81,10 +81,10 @@ Example:
         "solving_tool": ""
     }}
 }}
-'''.format(num_tasks=settings.SINGLE_TASK_DATA_SIZE)
+'''.format(num_scenarios=settings.SINGLE_TASK_DATA_SIZE)
 
 
-print("Start generating.")
+print("Start generating single-task dataset.")
 client = OpenAI()
 completion = client.chat.completions.create(
     model="gpt-4o",

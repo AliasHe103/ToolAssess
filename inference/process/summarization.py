@@ -1,10 +1,6 @@
 import os, json
 from openai import OpenAI
-
 from config import settings
-
-if os.environ.get("OPENAI_API_KEY") is None:
-    raise ValueError("OPENAI_API_KEY is not set!")
 
 task_prompt = '''
 You are tasked with summarizing tool descriptions. For each tool, you are provided with a long description that includes its name, features, and use cases. Your goal is to condense the original description into a concise, clear, and machine-readable summary that focuses on the core functionality of the tool. The summary should highlight what the tool does, its main purpose, and how it helps a Large Language Model (LLM) deal with a user's query. Avoid including unnecessary details or redundant information.
