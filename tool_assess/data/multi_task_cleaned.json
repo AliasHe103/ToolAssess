@@ -1,0 +1,645 @@
+{
+    "scenario1": {
+        "role": "Business Traveler",
+        "tasks": {
+            "task1": {
+                "query": "I have a business meeting scheduled in Paris next week. Can you check the weather there for that period?"
+            },
+            "task2": {
+                "query": "I need to know the fastest route from Charles de Gaulle Airport to the Eiffel Tower."
+            },
+            "task3": {
+                "query": "Calculate the travel time from Charles de Gaulle Airport to the Eiffel Tower considering the current traffic."
+            },
+            "task4": {
+                "query": "Help me draw a map from New York to Paris."
+            }
+        },
+        "tools": {
+            "OpenWeatherMap": "A leading weather API providing real-time forecasts, air quality monitoring, and historical climate data worldwide.",
+            "Google Maps API": "Provides detailed mapping, geolocation, route planning, and local business information for navigation and geographic queries.",
+            "Yahoo Finance": "Aggregates financial market news, data analysis, and company reports to help users stay updated on market trends and investment opportunities.",
+            "AskNews": "A global news aggregation tool that delivers real-time summaries from major media sources, ideal for news monitoring and analysis.",
+            "Google Search": "The world's most comprehensive search engine, providing real-time updates for fact-checking and general knowledge retrieval."
+        }
+    },
+    "scenario2": {
+        "role": "Climate Researcher",
+        "tasks": {
+            "task1": {
+                "query": "Find me the latest papers on the impact of climate change on agriculture."
+            },
+            "task2": {
+                "query": "Tell me more about the Greenhouse effect."
+            },
+            "task3": {
+                "query": "The molecular weight of carbon dioxide is approximately 44 g/mol. How much carbon dioxide(in kg) is produced if 5 mol carbon dioxide is produced?"
+            }
+        },
+        "tools": {
+            "Google Scholar": "The largest academic search engine, indexing papers, conference proceedings, books, and patents for scientific research and academic queries.",
+            "Google Search": "The world's most comprehensive search engine, providing real-time updates for fact-checking and general knowledge retrieval.",
+            "OpenWeatherMap": "A leading weather API providing real-time forecasts, air quality monitoring, and historical climate data worldwide.",
+            "DALL-E API": "A text-to-image AI generator that creates high-quality images, ideal for visual content creation and design assistance.",
+            "Yahoo Finance": "Aggregates financial market news, data analysis, and company reports to help users stay updated on market trends and investment opportunities."
+        }
+    },
+    "scenario3": {
+        "role": "Programming Learner",
+        "tasks": {
+            "task1": {
+                "query": "I want to learn programming. What is Python?"
+            },
+            "task2": {
+                "query": "Find online courses about Python."
+            },
+            "task3": {
+                "query": "What is the square root of 144? Please show me with Python."
+            },
+            "task4": {
+                "query": "Can you tell me the exact lottery number of the next week's with Python?"
+            }
+        },
+        "tools": {
+            "Google Search": "The world's most comprehensive search engine, providing real-time updates for fact-checking and general knowledge retrieval.",
+            "Python REPL": "A runtime environment for executing Python code instantly, useful for mathematical calculations, data processing, and logic validation.",
+            "Alpha Vantage": "A financial data API offering real-time stock market data, forex, and cryptocurrency insights, supporting technical analysis and investment research.",
+            "OpenWeatherMap": "A leading weather API providing real-time forecasts, air quality monitoring, and historical climate data worldwide."
+        }
+    },
+    "scenario4": {
+        "role": "E-commerce Customer",
+        "tasks": {
+            "task1": {
+                "query": "Find the customer reviews for the newly launched iPhone model on Amazon."
+            },
+            "task2": {
+                "query": "What is the price and available discounts for this iPhone model?"
+            },
+            "task3": {
+                "query": "Find an Apple Store near the New York City."
+            },
+            "task4": {
+                "query": "I am considering going there by car or by foot, help me make choice."
+            }
+        },
+        "tools": {
+            "GitHub API": "The world's largest code hosting platform API, offering repository management, version control, and collaborative development capabilities.",
+            "Amazon Product Advertising API": "The official Amazon API for retrieving product prices, discounts, and user reviews, useful for e-commerce data analysis and recommendation systems.",
+            "Have I Been Pwned API": "Checks if an email address has been exposed in known data breaches, enhancing security awareness.",
+            "PayPal API": "Handles online transactions, payment processing, and secure digital wallets."
+        }
+    },
+    "scenario5": {
+        "role": "Language Learner",
+        "tasks": {
+            "task1": {
+                "query": "I'd like to translate this sentence into Spanish: 'The environment is crucial for our survival.'"
+            },
+            "task2": {
+                "query": "What is the capital of Spain, by the way?"
+            },
+            "task3": {
+                "query": "How is the average hotel price in Spain if I take a trip there?"
+            }
+        },
+        "tools": {
+            "DeepL API": "A high-quality machine translation service known for its natural and fluent translations, suitable for professional and multilingual communication.",
+            "WHO API": "The official World Health Organization API, providing global health data, disease statistics, and epidemic monitoring information.",
+            "DALL-E API": "A text-to-image AI generator that creates high-quality images, ideal for visual content creation and design assistance."
+        }
+    },
+    "scenario6": {
+        "role": "Concert Enthusiast",
+        "tasks": {
+            "task1": {
+                "query": "Check if there's any upcoming music concert in Los Angeles this weekend."
+            },
+            "task2": {
+                "query": "Find the fastest route from LAX to the concert venue using current traffic data."
+            },
+            "task3": {
+                "query": "How long will the concert last? I'd like to see a live video feed."
+            }
+        },
+        "tools": {
+            "AskNews": "A global news aggregation tool that delivers real-time summaries from major media sources, ideal for news monitoring and analysis.",
+            "Google Maps API": "Provides detailed mapping, geolocation, route planning, and local business information for navigation and geographic queries.",
+            "Amazon Product Advertising API": "The official Amazon API for retrieving product prices, discounts, and user reviews, useful for e-commerce data analysis and recommendation systems."
+        }
+    },
+    "scenario7": {
+        "role": "Home Cook",
+        "tasks": {
+            "task1": {
+                "query": "Find me a simple chocolate cake recipe."
+            },
+            "task2": {
+                "query": "The recipe calls for 100 grams of sugar. If I double it, how many grams of sugar do I need in total?"
+            },
+            "task3": {
+                "query": "Can you predict if I will become a famous chef by next year?"
+            }
+        },
+        "tools": {
+            "Google Search": "The world's most comprehensive search engine, providing real-time updates for fact-checking and general knowledge retrieval.",
+            "OpenWeatherMap": "A leading weather API providing real-time forecasts, air quality monitoring, and historical climate data worldwide.",
+            "GitHub API": "The world's largest code hosting platform API, offering repository management, version control, and collaborative development capabilities."
+        }
+    },
+    "scenario8": {
+        "role": "Fitness Beginner",
+        "tasks": {
+            "task1": {
+                "query": "I want to start a workout plan to build upper body strength. Can you find a suitable video tutorial?"
+            },
+            "task2": {
+                "query": "What is the recommended daily protein intake for an adult?"
+            },
+            "task3": {
+                "query": "Predict exactly how many pounds of muscle I will gain in 2 months if I follow this plan."
+            }
+        },
+        "tools": {
+            "YouTube API": "The largest video platform API, allowing video searches, playback, comment analysis, and channel management.",
+            "Trello API": "Provides access to Trello board data, facilitating project management, task tracking, and team collaboration.",
+            "MyFitnessPal API": "Manages nutrition tracking, calorie counting, and dietary insights."
+        }
+    },
+    "scenario9": {
+        "role": "Aspiring Blogger",
+        "tasks": {
+            "task1": {
+                "query": "I want to write a blog post. Can you check the latest trending topics in the tech industry?"
+            },
+            "task2": {
+                "query": "What's the difference between WordPress and Medium for blogging?"
+            },
+            "task3": {
+                "query": "Will my blog go viral in 3 months?"
+            }
+        },
+        "tools": {
+            "AskNews": "A global news aggregation tool that delivers real-time summaries from major media sources, ideal for news monitoring and analysis.",
+            "CoinGecko API": "Fetches cryptocurrency market data, including prices, market capitalization, and historical trends.",
+            "Airtable API": "Provides database-like functionalities for flexible project management and data organization."
+        }
+    },
+    "scenario10": {
+        "role": "Crypto Enthusiast",
+        "tasks": {
+            "task1": {
+                "query": "Find the real-time price of Ethereum."
+            },
+            "task2": {
+                "query": "I'd like to analyze big data on Ethereum transactions in the last two months. Any tool for that?"
+            },
+            "task3": {
+                "query": "Can you tell me how much data is stored across all Ethereum nodes exactly right now?"
+            }
+        },
+        "tools": {
+            "CoinGecko API": "Fetches cryptocurrency market data, including prices, market capitalization, and historical trends.",
+            "Google BigQuery API": "A fully managed data warehouse API for running large-scale analytics queries and business intelligence.",
+            "Microsoft Power BI API": "Integrates with Power BI to provide real-time data visualization, analytics, and dashboard management."
+        }
+    },
+    "scenario11": {
+        "role": "Leisure Traveler",
+        "tasks": {
+            "task1": {
+                "query": "I'm going to San Francisco next weekend. Do you have any travel suggestions?"
+            },
+            "task2": {
+                "query": "Can you book a flight from Los Angeles to San Francisco?"
+            }
+        },
+        "tools": {
+            "OpenWeatherMap": "A leading weather API providing real-time forecasts, air quality monitoring, and historical climate data worldwide.",
+            "Google Maps API": "Provides detailed mapping, geolocation, route planning, and local business information for navigation and geographic queries.",
+            "Slack API": "A team communication and collaboration platform API, supporting message automation, notifications, and workflow management.",
+            "Natural Language API": "Provides text analysis, sentiment detection, syntax parsing, and named entity recognition for natural language processing tasks."
+        }
+    },
+    "scenario12": {
+        "role": "Job Seeker",
+        "tasks": {
+            "task1": {
+                "query": "Find the latest software engineer job postings near me."
+            },
+            "task2": {
+                "query": "Is 'remote work' trending these days?"
+            },
+            "task3": {
+                "query": "What does the abbreviation 'API' stand for?"
+            },
+            "task4": {
+                "query": "What's the average software engineer salary in NYC?"
+            }
+        },
+        "tools": {
+            "LinkedIn API": "Supports professional networking, job listings, and company data analytics.",
+            "Google Trends": "Tracks and analyzes trending search data, enabling LLMs to provide insight into current public interests and topics.",
+            "Docker Hub API": "Enables access to containerized applications and manages Docker images in cloud environments.",
+            "PayPal API": "Handles online transactions, payment processing, and secure digital wallets."
+        }
+    },
+    "scenario13": {
+        "role": "Health Enthusiast",
+        "tasks": {
+            "task1": {
+                "query": "I want to track my daily steps automatically. Can you set that up?"
+            },
+            "task2": {
+                "query": "What is the total recommended daily calorie intake for an adult male?"
+            },
+            "task3": {
+                "query": "Log my lunch: I had a 600-calorie meal. Add it to my daily tracker."
+            },
+            "task4": {
+                "query": "Generate a detailed chart of my heart rate data for the last 6 months."
+            }
+        },
+        "tools": {
+            "Apple HealthKit": "A health data management tool within the iOS ecosystem, supporting heart rate tracking, fitness monitoring, and nutrition insights.",
+            "MyFitnessPal API": "Manages nutrition tracking, calorie counting, and dietary insights.",
+            "Stripe": "A leading online payment processing tool that supports subscription management, credit card transactions, and secure payments.",
+            "Instagram Graph API": "Provides access to Instagram user posts, insights, and social network data."
+        }
+    },
+    "scenario14": {
+        "role": "Marketing Specialist",
+        "tasks": {
+            "task1": {
+                "query": "Check if brand 'Acme Corp' is trending on Twitter recently."
+            },
+            "task2": {
+                "query": "Analyze the sentiment of recent tweets about 'Acme Corp'."
+            },
+            "task3": {
+                "query": "What is the difference between B2B marketing and B2C marketing?"
+            },
+            "task4": {
+                "query": "Could you run an ad campaign on Google Ads for me right now?"
+            }
+        },
+        "tools": {
+            "Twitter API": "Enables access to Twitter data, supporting social media analytics, sentiment tracking, and trend analysis.",
+            "Natural Language API": "Provides text analysis, sentiment detection, syntax parsing, and named entity recognition for natural language processing tasks.",
+            "Slack API": "A team communication and collaboration platform API, supporting message automation, notifications, and workflow management.",
+            "CoinGecko API": "Fetches cryptocurrency market data, including prices, market capitalization, and historical trends."
+        }
+    },
+    "scenario15": {
+        "role": "Music Enthusiast",
+        "tasks": {
+            "task1": {
+                "query": "I have collected several lyrics. Can recommend some similar songs to me?"
+            },
+            "task2": {
+                "query": "Where can I see the MV of Luis Fonsi's song 'Despacito'? I need the link."
+            },
+            "task3": {
+                "query": "What does 'BPM' stand for in music production?"
+            },
+            "task4": {
+                "query": "Generate a track of blues melody for me."
+            }
+        },
+        "tools": {
+            "Spotify API": "A music streaming API that enables access to playlists, song recommendations, and user music preferences.",
+            "YouTube API": "The largest video platform API, allowing video searches, playback, comment analysis, and channel management.",
+            "DALL-E API": "A text-to-image AI generator that creates high-quality images, ideal for visual content creation and design assistance.",
+            "Plaid API": "Enables financial account verification, banking transactions, and spending insights."
+        }
+    },
+    "scenario16": {
+        "role": "DevOps Engineer",
+        "tasks": {
+            "task1": {
+                "query": "Help me upload all system logs to a secure cloud storage."
+            },
+            "task2": {
+                "query": "Set up an isolated container environment for our test suite."
+            },
+            "task3": {
+                "query": "Provide a reliable firewall for our test environment."
+            },
+            "task4": {
+                "query": "Is there any cyber security product for me?"
+            }
+        },
+        "tools": {
+            "AWS S3 API": "A cloud storage service that allows scalable storage and retrieval of large data sets.",
+            "Azure Container Apps": "A cloud-based secure sandbox environment for remote code execution, ensuring safe and isolated code execution.",
+            "CoinGecko API": "Fetches cryptocurrency market data, including prices, market capitalization, and historical trends.",
+            "IBM Watson API": "Provides AI-powered NLP, image recognition, and business process automation."
+        }
+    },
+    "scenario17": {
+        "role": "Space Hobbyist",
+        "tasks": {
+            "task1": {
+                "query": "I'd love to see the latest images from the Mars rover mission."
+            },
+            "task2": {
+                "query": "Analyze the rover's temperature data logs for any extreme values or anomalies."
+            },
+            "task3": {
+                "query": "Could you explain what a 'light-minute' means in space travel?"
+            },
+            "task4": {
+                "query": "Let's schedule a private video call with NASA next week to discuss rover updates."
+            }
+        },
+        "tools": {
+            "NASA Toolkit": "Accesses NASA data for space-related inquiries, enabling LLMs to provide informed responses on space exploration topics.",
+            "E2B Data Analysis": "Processes end-to-end business data for actionable insights, helping LLMs generate recommendations or reports from business operations.",
+            "CDP": "Consolidates customer data for tailored responses, enabling LLMs to enhance user interactions with personalized support and recommendations.",
+            "Twilio": "Enables integrations with messaging platforms to automate messaging tasks, assisting LLMs in managing communications."
+        }
+    },
+    "scenario18": {
+        "role": "Restaurant Manager",
+        "tasks": {
+            "task1": {
+                "query": "I'd like to calculate the nutritional information for our new vegan lasagna recipe."
+            },
+            "task2": {
+                "query": "Segment my returning customers based on past visits, so we can send targeted coupons."
+            },
+            "task3": {
+                "query": "Broadcast a promotional SMS to these customers about our dinner specials."
+            },
+            "task4": {
+                "query": "Set up an e-commerce site that automatically processes online payments for meal orders."
+            }
+        },
+        "tools": {
+            "Passio NutritionAI": "Offers nutrition analysis and recommendations, helping LLMs assist users with diet planning and health inquiries.",
+            "CDP": "Consolidates customer data for tailored responses, enabling LLMs to enhance user interactions with personalized support and recommendations.",
+            "Twilio": "Enables integrations with messaging platforms to automate messaging tasks, assisting LLMs in managing communications.",
+            "IBM Watson API": "Provides AI-powered NLP, image recognition, and business process automation."
+        }
+    },
+    "scenario19": {
+        "role": "History Teacher",
+        "tasks": {
+            "task1": {
+                "query": "Find me some reliable primary sources on the Renaissance period using semantic search."
+            },
+            "task2": {
+                "query": "Generate flashcards to help my students memorize key Renaissance figures and dates."
+            },
+            "task3": {
+                "query": "Could you record my lecture audio and provide text transcripts for the students?"
+            }
+        },
+        "tools": {
+            "Jina Search": "Enhances search capabilities for multimodal data, allowing LLMs to process various data types beyond text for richer interactions.",
+            "Memorize": "Helps manage learning tasks through personalized study approaches, assisting LLMs in providing tailored educational support.",
+            "NVIDIA Riva: ASR and TTS": "Builds real-time conversational AI pipelines, helping LLMs integrate speech recognition and synthesis for user interactions.",
+            "Cloudflare API": "Provides web security, performance optimizations, and DDoS protection for online applications."
+        }
+    },
+    "scenario20": {
+        "role": "Small Business Owner",
+        "tasks": {
+            "task1": {
+                "query": "Create an AI-driven chatbot on my website to answer basic FAQs."
+            },
+            "task2": {
+                "query": "Scrape competitor websites for publicly listed prices and promotions."
+            },
+            "task3": {
+                "query": "Enable advanced firewall or DDoS protection for my site."
+            },
+            "task4": {
+                "query": "Is AI chatbot helpful for my website? Should I purchase any AI assistants service?"
+            }
+        },
+        "tools": {
+            "Upstage": "Develops AI-driven virtual assistants with enhanced conversational abilities, enriching LLMs' interactions with users.",
+            "ScrapeGraph": "Web scraping tool for LLMs to extract structured data from websites, enriching responses with live web content.",
+            "Cloudflare API": "Provides web security, performance optimizations, and DDoS protection for online applications.",
+            "Prolog": "Handles logical reasoning tasks for LLMs, enabling structured reasoning and problem-solving through symbolic computation."
+        }
+    },
+    "scenario21": {
+        "role": "Medical Student",
+        "tasks": {
+            "task1": {
+                "query": "Index my lecture notes on physiology so I can quickly search them by topic."
+            },
+            "task2": {
+                "query": "Please record my study group conversation and convert it into text for reference."
+            },
+            "task3": {
+                "query": "Could you schedule my monthly exam review in the school system?"
+            }
+        },
+        "tools": {
+            "Nuclia Understanding": "Indexes unstructured data for optimized searches, allowing LLMs to extract and summarize relevant information from diverse sources.",
+            "NVIDIA Riva: ASR and TTS": "Builds real-time conversational AI pipelines, helping LLMs integrate speech recognition and synthesis for user interactions.",
+            "Office365 Toolkit": "Automates tasks within Microsoft Office 365, enhancing LLMs' productivity through document management and workflow support.",
+            "Spark SQL Toolkit": "Processes large datasets with SQL, enabling LLMs to perform efficient data analysis and generate meaningful insights."
+        }
+    },
+    "scenario22": {
+        "role": "Game Developer",
+        "tasks": {
+            "task1": {
+                "query": "I'm creating a new adventure game. Could you set up an automated testing workflow for our builds?"
+            },
+            "task2": {
+                "query": "Can you help me deal with version control of my project?"
+            },
+            "task3": {
+                "query": "Is it possible to auto-generate 3D models of our in-game characters?"
+            }
+        },
+        "tools": {
+            "Jenkins": "Automates software project workflows for LLMs, enabling the automation of tasks like data processing and model training.",
+            "Github Toolkit": "Enables interaction with GitHub for LLMs to manage repositories and collaborate on coding projects.",
+            "SearchApi": "Queries multiple search engines and databases for information, enabling LLMs to access real-time user-driven content.",
+            "StackExchange": "Facilitates access to a network of Q&A sites, allowing LLMs to engage with diverse fields of knowledge and offer community insights."
+        }
+    },
+    "scenario23": {
+        "role": "Event Organizer",
+        "tasks": {
+            "task1": {
+                "query": "I'm planning a tech conference. Could you find me a list of the top 3 venues available in June?"
+            },
+            "task2": {
+                "query": "Help me manage attendee registrations and issue digital tickets."
+            },
+            "task3": {
+                "query": "What is the best approach to ensure all presentations are recorded in high quality?"
+            },
+            "task4": {
+                "query": "Design an AR booth for sponsor demos and crowd interaction."
+            }
+        },
+        "tools": {
+            "Tavily Search": "Provides accurate and factual search results specifically for AI agents, allowing LLMs to retrieve real-time information.",
+            "Ionic Shopping Tool": "Enables ecommerce transactions within AI Assistants, allowing LLMs to facilitate shopping experiences directly.",
+            "GraphQL": "Allows LLMs to execute structured queries against data, providing precise responses tailored to user needs.",
+            "Office365 Toolkit": "Automates tasks within Microsoft Office 365, enhancing LLMs' productivity through document management and workflow support."
+        }
+    },
+    "scenario24": {
+        "role": "Insurance Agent",
+        "tasks": {
+            "task1": {
+                "query": "Could you calculate a standard home insurance premium for a two-story property in Seattle?"
+            },
+            "task2": {
+                "query": "Explain what 'actuarial risk' means in simple terms."
+            },
+            "task3": {
+                "query": "I need to send an automated renewal email campaign to clients whose policies expire this month."
+            },
+            "task4": {
+                "query": "Integrate a weather alert system that automatically adjusts premiums in real-time."
+            }
+        },
+        "tools": {
+            "PaymanAI": "Provides AI-driven solutions for financial management, enabling LLMs to track spending and offer budgeting advice.",
+            "Infobip": "Enables multi-channel customer engagement, helping LLMs manage automated communications across SMS, email, and other platforms.",
+            "Reddit Search": "Searches Reddit for community-driven insights, allowing LLMs to provide discussions and opinions on various topics.",
+            "Robocorp Toolkit": "Supports automation and RPA workflows for LLMs, enabling them to handle repetitive tasks and integrate with external systems."
+        }
+    },
+    "scenario25": {
+        "role": "Archaeologist",
+        "tasks": {
+            "task1": {
+                "query": "Find me any newly published papers about ancient Mayan ruins."
+            },
+            "task2": {
+                "query": "Generate a detailed 3D model of discovered pottery shards using AI."
+            },
+            "task3": {
+                "query": "Summarize the main findings of the papers you found."
+            }
+        },
+        "tools": {
+            "Semantic Scholar API Tool": "Retrieves academic research data for LLMs, enhancing responses with detailed scholarly information and citations.",
+            "ScrapeGraph": "Web scraping tool for LLMs to extract structured data from websites, enriching responses with live web content.",
+            "Mojeek Search": "Retrieves privacy-focused web content, enabling LLMs to deliver unbiased and accurate information without tracking users.",
+            "Steam Toolkit": "Integrates with the Steam platform, allowing LLMs to assist users in gaming-related queries and community engagements."
+        }
+    },
+    "scenario26": {
+        "role": "Local Government Official",
+        "tasks": {
+            "task1": {
+                "query": "You are authorized to the government data. I need to gather population data for the upcoming census in our district."
+            },
+            "task2": {
+                "query": "Identify which neighborhoods have the highest request for road maintenance."
+            },
+            "task3": {
+                "query": "Draft a new policy for improving local infrastructure funding."
+            },
+            "task4": {
+                "query": "Implement a live chat feature on our official portal for citizen feedback right now."
+            }
+        },
+        "tools": {
+            "SQLDatabase Toolkit": "Manages SQL databases for LLMs, allowing query execution and data retrieval to improve decision-making capabilities.",
+            "Spark SQL Toolkit": "Processes large datasets with SQL, enabling LLMs to perform efficient data analysis and generate meaningful insights.",
+            "Nuclia Understanding": "Indexes unstructured data for optimized searches, allowing LLMs to extract and summarize relevant information from diverse sources.",
+            "SceneXplain": "Analyzes images for detailed descriptions, enhancing LLMs' capabilities in providing context-aware visual insights."
+        }
+    },
+    "scenario27": {
+        "role": "Marine Biologist",
+        "tasks": {
+            "task1": {
+                "query": "Find the latest academic papers about coral bleaching."
+            },
+            "task2": {
+                "query": "What is the difference between the photic zone and the aphotic zone?"
+            },
+            "task3": {
+                "query": "Use AI to identify fish species from an underwater reef photo."
+            },
+            "task4": {
+                "query": "Log my dive data into our reef monitoring system automatically."
+            }
+        },
+        "tools": {
+            "PubMed": "Accesses biomedical literature for scientific inquiries, enabling LLMs to retrieve and analyze health-related research articles.",
+            "SceneXplain": "Analyzes images for detailed descriptions, enhancing LLMs' capabilities in providing context-aware visual insights.",
+            "Prolog": "Handles logical reasoning tasks for LLMs, enabling structured reasoning and problem-solving through symbolic computation.",
+            "ScrapeGraph": "Web scraping tool for LLMs to extract structured data from websites, enriching responses with live web content."
+        }
+    },
+    "scenario28": {
+        "role": "Fashion Designer",
+        "tasks": {
+            "task1": {
+                "query": "Generate a new handbag design with a floral pattern using AI."
+            },
+            "task2": {
+                "query": "Scan this fabric photo to interpret its texture details."
+            },
+            "task3": {
+                "query": "With these details, design a suit of haute couture for me."
+            },
+            "task4": {
+                "query": "Create an AR runway experience for the upcoming collection."
+            }
+        },
+        "tools": {
+            "Dall-E Image Generator": "Generates digital images from text prompts, enabling LLMs to create visuals based on user descriptions.",
+            "Google Lens": "Analyzes images for content interpretation, providing LLMs with tools to engage in visual inquiries and offer insights based on images.",
+            "Cogniswitch Toolkit": "Supports building applications with organized knowledge retrieval, helping LLMs provide reliable and well-structured outputs.",
+            "DataForSEO": "Retrieves SEO and marketing data through APIs, aiding LLMs in providing insights and analytics for digital marketing strategies."
+        }
+    },
+    "scenario29": {
+        "role": "Real Estate Broker",
+        "tasks": {
+            "task1": {
+                "query": "Search online listings for apartments under $500K in my city."
+            },
+            "task2": {
+                "query": "How do I ensure I'm calculating property taxes correctly?"
+            },
+            "task3": {
+                "query": "Sync my new buyer leads with my CRM system for follow-up."
+            },
+            "task4": {
+                "query": "Make a buyers list for me."
+            }
+        },
+        "tools": {
+            "SearxNG Search": "Aggregates search results from various engines while respecting privacy, aiding LLMs in delivering accurate information.",
+            "Salesforce": "Automates CRM tasks for LLMs, helping manage customer interactions, sales, and support operations efficiently.",
+            "Requests Toolkit": "Simplifies making HTTP requests for LLMs, facilitating real-time data retrieval and integration with external APIs.",
+            "Permit": "Manages access controls for LLMs, enhancing security by ensuring only authorized users can access specific resources."
+        }
+    },
+    "scenario30": {
+        "role": "Whimsical Novel Lover",
+        "tasks": {
+            "task1": {
+                "query": "What is the weather like in Hogwarts today?"
+            },
+            "task2": {
+                "query": "Book a flight from Hogwarts to Winterfell."
+            },
+            "task3": {
+                "query": "I want to establish a company related to electrical appliances at Hogwarts. Help me come up with a company name."
+            }
+        },
+        "tools": {
+            "LinkedIn API": "Supports professional networking, job listings, and company data analytics.",
+            "Google Maps API": "Provides detailed mapping, geolocation, route planning, and local business information for navigation and geographic queries.",
+            "OpenWeatherMap": "A leading weather API providing real-time forecasts, air quality monitoring, and historical climate data worldwide."
+        }
+    }
+}

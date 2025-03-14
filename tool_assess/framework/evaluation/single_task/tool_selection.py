@@ -2,10 +2,12 @@ import json
 import os
 
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
-from config import settings
+from tool_assess.config import settings
+from tool_assess.config.settings import model_name
 
 result_path = settings.SINGLE_TASK_OUTPUT_PATH
-result_file = os.path.join(result_path, "deepseek.json")
+result_file = os.path.join(result_path, model_name + ".json")
+
 
 def get_true_results():
     _results = []
@@ -21,7 +23,7 @@ def get_true_results():
 
     return _results
 
-def get_test_results():
+def get_predicted_results():
     _results = []
     with open(result_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
@@ -72,12 +74,12 @@ def evaluate_model(r_true, r_pred):
 
 
 true_results = get_true_results()
-test_results = get_test_results()
+test_results = get_predicted_results()
 
 optimize_results(true_results, test_results)
-print(true_results)
-print(test_results)
+# print(true_results)
+# print(test_results)
 
 metrics = evaluate_model(true_results, test_results)
-for metric, value in metrics.items():
-    print(f"{metric}: {value:.4f}")
+# for metric, value in metrics.items():
+#     print(f"{metric}: {value:.4f}")

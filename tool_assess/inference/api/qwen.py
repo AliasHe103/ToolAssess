@@ -1,14 +1,9 @@
 import os
 from openai import OpenAI
 
-key = os.environ.get("DEEP_SEEK_API_KEY")
+key = os.environ.get("DASHSCOPE_API_KEY")
 if key is None:
-    raise ValueError("DEEP_SEEK_API_KEY is not set!")
-
-models_mapping = {
-    "deepseek-chat": "DeepSeek-V3",
-    "deepseek-reasoner": "DeepSeek-R1"
-}
+    raise ValueError("DASHSCOPE_API_KEY is not set!")
 
 tool_description_prompt = '''
 Please provide a brief introduction about a tool designed for LLMs to use, namely [Tool Name]: [Tool Description]. Specifically, explain how it serves the needs of a large language model (LLM) and describe its main functions or applications. For example, for the tool "Amadeus Toolkit", your response could be:
@@ -16,9 +11,9 @@ Please provide a brief introduction about a tool designed for LLMs to use, namel
 Now I will give you some relevant tools.
 '''
 
-client = OpenAI(api_key=key, base_url="https://api.deepseek.com")
+client = OpenAI(api_key=key, base_url="https://dashscope.aliyuncs.com/compatible-mode/v1")
 completion = client.chat.completions.create(
-    model="deepseek-chat",
+    model="qwen-max",
     messages=[
         {
             "role": "system",
@@ -29,8 +24,8 @@ completion = client.chat.completions.create(
             "content": "Gmail Toolkit"
         }
     ],
-    # max_tokens=256,
-    temperature=1.0,
+    max_tokens=256,
+    temperature=0.7,
 )
 
 print(completion.choices[0].message.content)
