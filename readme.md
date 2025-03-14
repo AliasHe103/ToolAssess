@@ -57,7 +57,7 @@ $$Recall=\frac{TP}{TP+FN}$$
 
 4️⃣ **F1 分数（F1 Score）**  
 ✅ 解释  
-$$F1=\frac{2*Precision*Recall}{Precision+Recall}$$
+$$F1=\frac{2 * Precision * Recall}{Precision+Recall}$$
  
 ✅ 现实意义：衡量 模型在精确率（避免误报）和召回率（避免漏报）之间的平衡，即：
 
@@ -172,7 +172,7 @@ $$F1=\frac{2*Precision*Recall}{Precision+Recall}$$
 与单任务场景不同的是，模型对每个子任务的回复都与一个特定的场景相关，子任务之间具有逻辑上的联系。  
 为了评估这种逻辑上的联系对模型表现的影响，或者说具体场景的影响，我引入了完全正确率和部分正确率这两个指标。  
 1️⃣ **完全正确率（ASA, Absolute Scenario Accuracy）**  
-✅ 解释
+✅ 解释  
 $$ASA = \frac{\text{Number of scenarios where all sub-tasks are correctly classified}}{\text{Total number of scenarios}}$$  
 ✅ 现实意义：  
 1. 评估模型处理多任务时的一致性，要求模型在整个场景的多个子任务上保持连贯且正确的工具使用判断，从而反映模型在某场景下的决策的准确率。
@@ -215,10 +215,8 @@ ASA仍然考虑的是各场景中的完全正确率，PSA考虑的是总体子�
 
 **🔍计算单任务工具使用意识评分（ST-TUS）**  
 计算公式：  
-$$
-ST\text{-}TUA = w_1 \cdot \text{Accuracy} + w_2 \cdot \text{Precision} + w_3 \cdot \text{Recall} + w_4 \cdot \text{F1 Score}
-$$
-其中，$w_1, w_2, w_3, w_4$为四个指标的权重，为了选取合适的权重以评估模型的实际表现，
+$$ST\text{-}TUA = w_1 \cdot \text{Accuracy} + w_2 \cdot \text{Precision} + w_3 \cdot \text{Recall} + w_4 \cdot \text{F1 Score}$$
+其中，$$w_1, w_2, w_3, w_4$$为四个指标的权重，为了选取合适的权重以评估模型的实际表现，
 确保评分能够适应不同模型，采取了下的计算策略。  
 
 **🔍自适应权重计算方法**  
@@ -232,9 +230,7 @@ $$
 **🔍方差贡献法的核心步骤**  
 此前，已经对多个模型（gpt-4o、deepseek-r1等）进行了测试，计算这些模型在相同场景下同测试任务中的各指标的方差，
 然后计算方差贡献：  
-$$
-W_i = \frac{\text{Var}(X_i)}{\sum \text{Var}(X_j)}
-$$
+$$W_i = \frac{\text{Var}(X_i)}{\sum \text{Var}(X_j)}$$
 其中，$W_i$代表第$i$个指标的权重，$X_i$代表第$i$个指标在各个模型中的方差。  
 通过方差贡献法，可以获得四种情况下的权重因子。于是，可计算出四种情况下的评估分数。
 
@@ -250,9 +246,7 @@ $$
 多任务场景下的工具选择能力分数（tool selection score in multi-task scenario, $MT\text{-}TSS$）  
 
 收集到上述结果后，通过下面的公式计算综合分数TAS：  
-$$
-TAS = \alpha \cdot ST\text{-}TUS + \beta \cdot ST\text{-}TSS + \gamma \cdot MT\text{-}TUS + \delta \cdot MT\text{-}TSS
-$$
+$$TAS = \alpha \cdot ST\text{-}TUS + \beta \cdot ST\text{-}TSS + \gamma \cdot MT\text{-}TUS + \delta \cdot MT\text{-}TSS$$
 其中，权重因子的确定同样可以使用方差贡献法以反映不同模型的表现。
 
 ## 4. 总结
