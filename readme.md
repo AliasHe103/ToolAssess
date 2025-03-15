@@ -218,5 +218,5 @@ $$TAS = \alpha \cdot ST\text{-}TUS + \beta \cdot ST\text{-}TSS + \gamma \cdot MT
 
 通过以上评估方法，对deepseek-r1、gpt-4o等模型进行了综合评估，并计算出其各项分数和综合分数。评估结果如下图：  
 ![TAS分数](assets/tas_of_all_agents.svg)
-![各项任务分数](assets/individual_tasks.svg)
+![各项任务分数](assets/individual_tasks.svg)  
 [各任务评测结果](assets/individual_tasks.csv)
