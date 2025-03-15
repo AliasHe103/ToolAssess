@@ -114,7 +114,7 @@ elif model_name in ["gpt-4o", "o1"]:
     assess_on_openai_single()
 elif model_name in ["qwen-max", "qwen2.5-7b-instruct-1m", "deepseek-r1", "deepseek-v3"]:
     assess_on_qwen_single()
-elif model_name in ["llama3.2-3b-instruct", "llama-3.3-70B"]:
+elif model_name in ["llama-3.2-3B", "llama-3.3-70B"]:
     assess_on_together_single(rule="6. Use double quotes, **avoid single quotes** in your reply.")
 elif model_name in ["glm-4-plus"]:
     assess_on_openai_compatible_single(key=settings.zhipu_api_key, url="https://open.bigmodel.cn/api/paas/v4/")

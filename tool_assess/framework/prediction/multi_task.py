@@ -72,9 +72,11 @@ def assess_multi_task(agent, system_prompt):
                 "type": "success",
                 "response": response
             }
+            print(response)
 
         except Exception as e:
             print(f"Error on {scenario_id}: {e}.")
+            print(response)
             results[scenario_id] = {
                 "type": "error",
                 "response": response
@@ -122,8 +124,15 @@ elif model_name in ["gpt-4o", "o1"]:
     assess_on_openai_multi()
 elif model_name in ["qwen-max", "qwen2.5-7b-instruct-1m", "deepseek-r1", "deepseek-v3"]:
     assess_on_qwen_multi()
-elif model_name in ["llama3.2-3b-instruct", "llama-3.3-70B"]:
-    assess_on_together_multi(rule="6. Use double quotes, **avoid single quotes** in your reply.")
+elif model_name in ["llama-3.2-3B", "llama-3.3-70B"]:
+    # model llama-3.2-3B has a poor ability of understanding the prompt, so errors may occur.
+    assess_on_together_multi(rule="""
+    6. Use double quotes, **avoid single quotes** in your reply.
+    7. Your result **must** be exactly a **single line**.
+    8. Be enclosed within square brackets [ ] to represent a valid Python list.
+    9. Each item in the list must be a complete string and enclosed in double quotes like ["requires tool: Google Search", "no tool"].
+    10. The tool name must NOT be enclosed in additional quotes.
+    """)
 elif model_name in ["glm-4-plus"]:
     assess_on_openai_compatible_multi(key=settings.zhipu_api_key, url="https://open.bigmodel.cn/api/paas/v4/")
 elif model_name in ["Baichuan4-Turbo"]:

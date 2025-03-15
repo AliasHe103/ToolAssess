@@ -2,8 +2,8 @@
 ***
 
 ## 1. 背景
+
 本研究聚焦于大语言模型（LLM）驱动的智能代理（Agent）在执行任务时的工具规划与选择能力，旨在评估其在实际应用中的效率与可靠性。  
-在目前的行业现状下，大多数商用智能代理并不会公开“模型选择决策” 的细节，即使你有 API 访问权限，也很难直接获取 “系统内部是在使用 GPT-3.5 还是 GPT-4” 之类的信息。
 
 ## 2. 评估标准
 
@@ -61,15 +61,14 @@ $$F1=\frac{2 * Precision * Recall}{Precision+Recall}$$
  
 ✅ 现实意义：衡量 模型在精确率（避免误报）和召回率（避免漏报）之间的平衡，即：
 
-如果 Precision 高，Recall 低 → 说明模型更谨慎，误报少但可能漏掉一些任务
-如果 Recall 高，Precision 低 → 说明模型更激进，能识别大部分 "requires tool"，但误报较多  
-⚠️ 如果类别不均衡，F1 Score 可以更公平地评估模型性能。
+如果F1分数很高，说明预测结果既精准又能覆盖大部分样本。  
+如果F1分数较低，说明预测结果不够精准或者覆盖不够广。
 
 📌 结论  
 ✅ 如果关注模型是否能准确识别任务类型，关注 Accuracy  
-✅ 如果关注模型是否误报 "requires tool"，关注 Precision  
-✅ 如果关注模型是否漏报 "requires tool"，关注 Recall  
-✅ 如果类别分布不均衡（某一类任务占比较少），关注 F1 Score  
+✅ 如果关注模型预测的误报率，关注 Precision  
+✅ 如果关注模型预测的漏报率，关注 Recall  
+✅ 如果类别分布不均衡，希望平衡误报率和漏报率的影响，关注 F1 Score  
 
 #### 2.1.2 工具选择能力
 
@@ -77,7 +76,7 @@ $$F1=\frac{2 * Precision * Recall}{Precision+Recall}$$
 由于如果预测结果是"requires tool"，那么具体结果可能是各种各样的工具，所以实际上这是一个多分类问题。
 然而，这并不是希望的，因为分类数量取决于出现工具数量，这样不利于评估；
 因此，在此基础上，引入两个新类型，分别为"true tool"和"false tool"，
-这样，原本的三分类问题变成了["true tool", "false tool", "no tool","cannot be completed"]的四分类问题。
+这样，原本的三分类问题变成了["true tool", "false tool", "no tool","cannot be completed"]的四分类问题。  
 在**单任务场景**下，
 评估模型的**工具选择能力**，即测试模型**能否正确识别出任务需要使用工具，并选择正确的工具"**。  
 这不在是一个三分类问题，因为"requires tool"的具体结果可能是各种各样的工具名，事实上，这是一个多分类问题。  
@@ -102,48 +101,6 @@ $$F1=\frac{2 * Precision * Recall}{Precision+Recall}$$
 1. 解决了FN = 0的缺点和Recall恒为1的问题。
 2. Precision, Recall, F1 Score 都变得更直观。 
 3. 使计算出的指标更具有现实意义。
-
-🔍 **评估“工具选择能力”时，Accuracy、Precision、Recall 和 F1 Score 的现实意义**  
-1️⃣ 准确率（Accuracy）  
-✅ 现实意义：  
-衡量模型整体判断任务是否需要工具的能力和工具选择能力。  
-如果 Accuracy 高，说明：
-模型大部分情况下能正确判断是否需要工具。
-模型在 "requires tool" 任务中，大部分情况下能选择正确的工具。
-但 Accuracy 无法区分：
-模型是完全错分类，还是只是选错了工具。  
-
-2️⃣ 精确率（Precision）  
-✅ 现实意义：
-
-衡量 模型在预测 "requires tool" 时，选择正确工具的概率。
-如果 Precision 高，说明：
-模型预测 "requires tool" 时，通常能选对工具。
-如果 Precision 低：
-模型经常错误地预测 "requires tool" 或选择了错误的工具（误报 False Positive 过多）。
-
-3️⃣ 召回率（Recall）  
-✅ 现实意义：
-
-衡量 在所有 "requires tool" 任务中，模型能正确预测多少。
-如果 Recall 高，说明：
-模型能很好地识别 "requires tool" 任务，并正确选择工具。
-如果 Recall 低：
-模型可能错误地将 "requires tool" 预测为 "false tool"（即 "no tool" 或 "cannot be completed"）。
-说明模型 低估了工具的必要性，无法正确识别需要工具的任务。
-
-4️⃣ F1 分数（F1 Score）  
-✅ 现实意义：  
-衡量 模型在 Precision 和 Recall 之间的平衡。
-如果 F1 高：
-模型既能正确预测 "requires tool" 任务，又能正确选择工具。
-如果 F1 低：
-说明 Precision 或 Recall 其中一个较差，模型要么误报过多，要么漏报过多。
-
-📌 结论  
-✅ 如果关注模型是否误报 "requires tool"（避免误选工具），关注 Precision  
-✅ 如果关注模型是否漏报 "requires tool"（避免忽略工具的必要性），关注 Recall  
-✅ 如果类别不均衡（部分任务较少），关注 F1 Score
 
 #### 2.1.3 单任务工具集选取
 
@@ -171,6 +128,7 @@ $$F1=\frac{2 * Precision * Recall}{Precision+Recall}$$
 在**多任务场景**下，评估模型的**工具使用意识**，仍然是["requires tool", "no tool", "cannot be completed"]的三分类问题，  
 与单任务场景不同的是，模型对每个子任务的回复都与一个特定的场景相关，子任务之间具有逻辑上的联系。  
 为了评估这种逻辑上的联系对模型表现的影响，或者说具体场景的影响，我引入了完全正确率和部分正确率这两个指标。  
+
 1️⃣ **完全正确率（ASA, Absolute Scenario Accuracy）**  
 ✅ 解释  
 $$ASA = \frac{\text{Number of scenarios where all sub-tasks are correctly classified}}{\text{Total number of scenarios}}$$  
@@ -198,7 +156,7 @@ ASA仍然考虑的是各场景中的完全正确率，PSA考虑的是总体子�
 上述研究中已经完成了在两种场景（单任务、多任务）下对两种能力意识（工具使用意识、工具选择能力）的测试，  
 于是对于每个测试模型，可以获得四种情况下的结果。
 
-### 3.1 评估结果
+### 3.1 评估方法
 
 我希望对于每种情况，综合的考量每个测试指标，从而生成对应情况下的评估分数。  
 已经完成的评估工作如下表所示：
@@ -251,4 +209,14 @@ $$TAS = \alpha \cdot ST\text{-}TUS + \beta \cdot ST\text{-}TSS + \gamma \cdot MT
 
 ## 4. 总结
 
+### 4.1 发现的问题
+
+1. 模型llama-3.2-3B对提示词（英文）的理解力很差，即使我多次修改规则以适应该模型，其仍然无法完成所有测试，而且该模型的回复格式随机性太强，甚至经常无视提示词的要求。
+因此我不得不手动修改其数据格式。
+
+### 4.2 评估结果
+
 通过以上评估方法，对deepseek-r1、gpt-4o等模型进行了综合评估，并计算出其各项分数和综合分数。评估结果如下图：  
+![TAS分数](assets/tas_of_all_agents.svg)
+![各项任务分数](assets/individual_tasks.svg)
+[各任务评测结果](assets/individual_tasks.csv)

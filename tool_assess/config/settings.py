@@ -19,7 +19,7 @@ available_models = [
     "deepseek-v3",
     "qwen-max",
     "qwen2.5-7b-instruct-1m",
-    "llama3.2-3b-instruct",
+    "llama-3.2-3B",
     "llama-3.3-70B",
     # closed-source
     "gpt-4o",
