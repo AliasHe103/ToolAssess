@@ -93,5 +93,9 @@ tool_assess_score = compute_tool_assess_score(model_name)
 print(f"Tool Assess score for {model_name}: {tool_assess_score}")
 
 tas_scores_file = os.path.join(settings.ASSESS_SCORE_PATH, "tas_scores.json")
+models_scenario_scores = os.path.join(settings.ASSESS_SCORE_PATH, "models_scenario_scores.json")
+
+with open(models_scenario_scores, 'w', encoding='utf-8') as f:
+    json.dump(models_scores_dict, f, ensure_ascii=False, indent=4)
 with open(tas_scores_file, 'w', encoding='utf-8') as f:
     json.dump(tas_dict, f, ensure_ascii=False, indent=4)

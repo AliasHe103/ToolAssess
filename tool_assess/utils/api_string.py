@@ -3,7 +3,7 @@ def get_model_name(model: str):
     return model.split('/')[1]
 
 together_model_map = {
-    "llama-3-70B": "meta-llama/Meta-Llama-3-70B-Instruct-Turbo",
+    "llama-3.3-70B": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
 }
 def to_api_model_string(name):
     return together_model_map.get(name)

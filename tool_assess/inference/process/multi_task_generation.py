@@ -1,7 +1,7 @@
 import os
 import json
 from openai import OpenAI
-from config import settings
+from tool_assess.config import settings
 
 
 def load_toolset():

@@ -1,6 +1,6 @@
 import os, json
 from openai import OpenAI
-from config import settings
+from tool_assess.config import settings
 
 DOMAIN_DIST = {
     'information_retrieval': 0.35,

@@ -1,12 +1,14 @@
 import json
 import os
-import time
 
-import dashscope
-from openai import OpenAI
-
+from tool_assess.agents.compatible_agent import CompatibleAgent
+from tool_assess.agents.deepseek_agent import DeepseekAgent
+from tool_assess.agents.gpt_agent import GPTAgent
+from tool_assess.agents.qwen_agent import QwenAgent
+from tool_assess.agents.together_agent import TogetherAgent
 from tool_assess.config import settings
 from tool_assess.config.settings import model_name
+
 
 def make_single_task_prompt(rule=""):
     return f"""
@@ -29,187 +31,70 @@ def make_single_task_prompt(rule=""):
     {rule}
     """
 
+def get_response_type(response):
+    response_type = "error"
+    if "requires tool" in response:
+        response_type = "requires tool"
+    elif "no tool" in response:
+        response_type = "no tool"
+    elif "cannot be completed" in response:
+        response_type = "cannot be completed"
+    else:
+        raise ValueError("Invalid response format.")
+    return response_type
+
+def assess_single_task(agent, system_prompt):
+    response = ""
+    for op_id, sample in samples.items():
+        query = sample["query"]
+        tools = json.dumps(sample["tools"], indent=2)
+
+        print(f"Assessing {op_id}.")
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": f"Query: {query}\nAvailable Tools: {tools}"}
+        ]
+
+        try:
+            response = agent.predict(messages)
+            response_type = get_response_type(response)
+
+            results[op_id] = {
+                "type": response_type,
+                "response": response
+            }
+
+        except Exception as e:
+            print(f"Error on {op_id}: {e}.")
+            results[op_id] = {
+                "type": "error",
+                "response": response
+            }
+            continue
+
 def assess_on_deepseek_single():
-    client = OpenAI(api_key=settings.deepseek_api_key, base_url="https://api.deepseek.com")
+    deepseek_agent = DeepseekAgent(name="deepseek-chat")
     system_prompt = make_single_task_prompt()
-    response = ""
-    for op_id, sample in samples.items():
-        query = sample["query"]
-        tools = json.dumps(sample["tools"], indent=2)
-
-        print(f"Assessing {op_id}.")
-        messages = [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": f"Query: {query}\nAvailable Tools: {tools}"}
-        ]
-
-        try:
-            completion = client.chat.completions.create(
-                model="deepseek-chat",
-                messages=messages,
-                temperature=1.0,
-            )
-
-            response = completion.choices[0].message.content.strip()
-            if "requires tool" in response:
-                response_type = "requires tool"
-            elif "no tool" in response:
-                response_type = "no tool"
-            elif "cannot be completed" in response:
-                response_type = "cannot be completed"
-            else:
-                raise ValueError("Invalid response format.")
-
-            results[op_id] = {
-                "type": response_type,
-                "response": response
-            }
-
-        except Exception as e:
-            print(f"Error on {op_id}: {e}")
-            results[op_id] = {
-                "type": "error",
-                "response": response
-            }
-            continue
-
+    assess_single_task(agent=deepseek_agent, system_prompt=system_prompt)
 def assess_on_openai_single():
-    client = OpenAI()
+    gpt_agent = GPTAgent(model_name)
     system_prompt = make_single_task_prompt()
-    response = ""
-    for op_id, sample in samples.items():
-        query = sample["query"]
-        tools = json.dumps(sample["tools"], indent=2)
-
-        print(f"Assessing {op_id}.")
-        messages = [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": f"Query: {query}\nAvailable Tools: {tools}"}
-        ]
-
-        try:
-            completion = client.chat.completions.create(
-                model=model_name,
-                messages=messages,
-                temperature=1.0,
-            )
-
-            response = completion.choices[0].message.content.strip()
-            if "requires tool" in response:
-                response_type = "requires tool"
-            elif "no tool" in response:
-                response_type = "no tool"
-            elif "cannot be completed" in response:
-                response_type = "cannot be completed"
-            else:
-                raise ValueError("Invalid response format.")
-
-            results[op_id] = {
-                "type": response_type,
-                "response": response
-            }
-
-        except Exception as e:
-            print(f"Error on {op_id}: {e}")
-            results[op_id] = {
-                "type": "error",
-                "response": response
-            }
-            continue
+    assess_single_task(agent=gpt_agent, system_prompt=system_prompt)
 
 def assess_on_openai_compatible_single(key, url, rule=""):
-    client = OpenAI(api_key=key, base_url=url)
+    compatible_agent = CompatibleAgent(key, url, model_name)
     system_prompt = make_single_task_prompt(rule)
-    response = ""
-    for op_id, sample in samples.items():
-        query = sample["query"]
-        tools = json.dumps(sample["tools"], indent=2)
+    assess_single_task(agent=compatible_agent, system_prompt=system_prompt)
 
-        print(f"Assessing {op_id}.")
-        messages = [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": f"Query: {query}\nAvailable Tools: {tools}"}
-        ]
+def assess_on_qwen_single(rule=""):
+    qwen_agent = QwenAgent(model_name)
+    system_prompt = make_single_task_prompt(rule)
+    assess_single_task(agent=qwen_agent, system_prompt=system_prompt)
 
-        try:
-            completion = client.chat.completions.create(
-                model=model_name,
-                messages=messages,
-                temperature=1.0,
-            )
-
-            response = completion.choices[0].message.content.strip()
-            if "requires tool" in response:
-                response_type = "requires tool"
-            elif "no tool" in response:
-                response_type = "no tool"
-            elif "cannot be completed" in response:
-                response_type = "cannot be completed"
-            else:
-                raise ValueError("Invalid response format.")
-
-            results[op_id] = {
-                "type": response_type,
-                "response": response
-            }
-
-        except Exception as e:
-            print(f"Error on {op_id}: {e}")
-            results[op_id] = {
-                "type": "error",
-                "response": response
-            }
-            continue
-
-def assess_on_llama_single():
-    system_prompt = make_single_task_prompt(
-        "6. Use double quotes, **avoid single quotes** in your reply."
-    )
-    response = ""
-    for op_id, sample in samples.items():
-        query = sample["query"]
-        tools = json.dumps(sample["tools"], indent=2)
-
-        print(f"Assessing {op_id}.")
-        messages = [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": f"Query: {query}\nAvailable Tools: {tools}"}
-        ]
-
-        try:
-            completion = dashscope.Generation.call(
-                api_key=settings.qwen_api_key,
-                model=model_name,
-                messages=messages,
-                result_format='message',  # set the result to be "message" format.
-            )
-            time.sleep(10) # consider rate limit, if error occurs, increase the sleep time
-            print(completion)
-            response = completion.output.choices[0].message.content.strip()
-
-            if "requires tool" in response:
-                response_type = "requires tool"
-            elif "no tool" in response:
-                response_type = "no tool"
-            elif "cannot be completed" in response:
-                response_type = "cannot be completed"
-            else:
-                print(response)
-                raise ValueError("Invalid response format.")
-
-
-            results[op_id] = {
-                "type": response_type,
-                "response": response
-            }
-
-        except Exception as e:
-            print(f"Error on {op_id}: {e}")
-            results[op_id] = {
-                "type": "error",
-                "response": response
-            }
-            continue
+def assess_on_together_single(rule=""):
+    together_agent = TogetherAgent(model_name)
+    system_prompt = make_single_task_prompt(rule)
+    assess_single_task(agent=together_agent, system_prompt=system_prompt)
 
 sample_file = settings.SINGLE_TASK_DATA_PATH
 output_path = settings.SINGLE_TASK_OUTPUT_PATH
@@ -228,9 +113,9 @@ if model_name in ["test"]:
 elif model_name in ["gpt-4o", "o1"]:
     assess_on_openai_single()
 elif model_name in ["qwen-max", "qwen2.5-7b-instruct-1m", "deepseek-r1", "deepseek-v3"]:
-    assess_on_openai_compatible_single(key=settings.qwen_api_key, url="https://dashscope.aliyuncs.com/compatible-mode/v1")
-elif model_name in ["llama3.2-3b-instruct"]:
-    assess_on_llama_single()
+    assess_on_qwen_single()
+elif model_name in ["llama3.2-3b-instruct", "llama-3.3-70B"]:
+    assess_on_together_single(rule="6. Use double quotes, **avoid single quotes** in your reply.")
 elif model_name in ["glm-4-plus"]:
     assess_on_openai_compatible_single(key=settings.zhipu_api_key, url="https://open.bigmodel.cn/api/paas/v4/")
 elif model_name in ["Baichuan4-Turbo"]:

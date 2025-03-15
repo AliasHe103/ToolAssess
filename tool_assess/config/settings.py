@@ -14,16 +14,18 @@ else:
         model_name = json.load(f)["name"]
 
 available_models = [
-    "deepseek",
+    # open-source
     "deepseek-r1",
     "deepseek-v3",
-    "gpt-4o",
-    "o1",
     "qwen-max",
     "qwen2.5-7b-instruct-1m",
     "llama3.2-3b-instruct",
+    "llama-3.3-70B",
+    # closed-source
+    "gpt-4o",
+    "o1",
     "glm-4-plus",
-    "Baichuan4-Turbo"
+    "Baichuan4-Turbo",
 ]
 
 if model_name not in available_models:

@@ -56,7 +56,7 @@ if args.task in ["assess", "score"]:
         exit(1)
 
 # display
-if args.task in ["assess"]:
+if args.task in ["assess", "score"]:
     try:
         cmd = f"streamlit run app.py"
         result = subprocess.run(cmd, shell=True, check=True)

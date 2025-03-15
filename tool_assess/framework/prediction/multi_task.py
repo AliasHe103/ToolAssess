@@ -1,10 +1,11 @@
 import json
 import os
-import time
 
-import dashscope
-from openai import OpenAI
-
+from tool_assess.agents.compatible_agent import CompatibleAgent
+from tool_assess.agents.deepseek_agent import DeepseekAgent
+from tool_assess.agents.gpt_agent import GPTAgent
+from tool_assess.agents.qwen_agent import QwenAgent
+from tool_assess.agents.together_agent import TogetherAgent
 from tool_assess.config import settings
 from tool_assess.config.settings import model_name
 
@@ -36,10 +37,7 @@ def extract_sub_tasks(tasks):
         sub_tasks.append(task_data["query"])
     return sub_tasks
 
-def assess_on_deepseek_multi():
-    client = OpenAI(api_key=settings.deepseek_api_key, base_url="https://api.deepseek.com")
-    system_prompt = make_multi_task_prompt()
-
+def assess_multi_task(agent, system_prompt):
     for scenario_id, scenario_data in scenarios.items():
         role = scenario_data.get("role", "Unknown Role")
         tasks = scenario_data.get("tasks", {})
@@ -64,12 +62,7 @@ def assess_on_deepseek_multi():
 
         response = ""
         try:
-            completion = client.chat.completions.create(
-                model="deepseek-chat",
-                messages=messages,
-                temperature=1.0,
-            )
-            response = completion.choices[0].message.content.strip()
+            response = agent.predict(messages)
 
             parsed_response = json.loads(response)
             if not isinstance(parsed_response, list):
@@ -81,165 +74,36 @@ def assess_on_deepseek_multi():
             }
 
         except Exception as e:
-            print(f"Error on {scenario_id}.")
+            print(f"Error on {scenario_id}: {e}.")
             results[scenario_id] = {
                 "type": "error",
                 "response": response
             }
+
+def assess_on_deepseek_multi():
+    deepseek_agent = DeepseekAgent(name="deepseek-chat")
+    system_prompt = make_multi_task_prompt()
+    assess_multi_task(agent=deepseek_agent, system_prompt=system_prompt)
 
 def assess_on_openai_multi():
-    client = OpenAI()
+    gpt_agent = GPTAgent(model_name)
     system_prompt = make_multi_task_prompt()
-
-    for scenario_id, scenario_data in scenarios.items():
-        role = scenario_data.get("role", "Unknown Role")
-        tasks = scenario_data.get("tasks", {})
-        sub_tasks = extract_sub_tasks(tasks)
-        tools_data = scenario_data.get("tools", {})
-
-        # Convert tools_data (dict) to JSON string for display
-        tools_json = json.dumps(tools_data, indent=2)
-
-        print(f"Assessing {scenario_id}.")
-
-        # Build messages for the model
-        messages = [
-            {"role": "system", "content": system_prompt},
-            {
-                "role": "user",
-                "content": f"User Role: {role}\nTask: {sub_tasks}\nAvailable Tools: {tools_json}"
-            }
-        ]
-
-        # print(f"User Role: {role}\nTask: {sub_tasks}\nAvailable Tools: {tools_json}")
-
-        response = ""
-        try:
-            completion = client.chat.completions.create(
-                model=model_name,
-                messages=messages,
-                temperature=1.0,
-            )
-            response = completion.choices[0].message.content.strip()
-
-            parsed_response = json.loads(response)
-            if not isinstance(parsed_response, list):
-                raise ValueError("Invalid response format.")
-
-            results[scenario_id] = {
-                "type": "success",
-                "response": response
-            }
-
-        except Exception as e:
-            print(f"Error on {scenario_id}.")
-            results[scenario_id] = {
-                "type": "error",
-                "response": response
-            }
+    assess_multi_task(agent=gpt_agent, system_prompt=system_prompt)
 
 def assess_on_openai_compatible_multi(key, url, rule=""):
-    client = OpenAI(api_key=key, base_url=url)
+    compatible_agent = CompatibleAgent(key, url, model_name)
     system_prompt = make_multi_task_prompt(rule)
+    assess_multi_task(agent=compatible_agent, system_prompt=system_prompt)
 
-    for scenario_id, scenario_data in scenarios.items():
-        role = scenario_data.get("role", "Unknown Role")
-        tasks = scenario_data.get("tasks", {})
-        sub_tasks = extract_sub_tasks(tasks)
-        tools_data = scenario_data.get("tools", {})
+def assess_on_qwen_multi(rule=""):
+    qwen_agent = QwenAgent(model_name)
+    system_prompt = make_multi_task_prompt(rule)
+    assess_multi_task(agent=qwen_agent, system_prompt=system_prompt)
 
-        # Convert tools_data (dict) to JSON string for display
-        tools_json = json.dumps(tools_data, indent=2)
-
-        print(f"Assessing {scenario_id}.")
-
-        # Build messages for the model
-        messages = [
-            {"role": "system", "content": system_prompt},
-            {
-                "role": "user",
-                "content": f"User Role: {role}\nTask: {sub_tasks}\nAvailable Tools: {tools_json}"
-            }
-        ]
-
-        response = ""
-        try:
-            completion = client.chat.completions.create(
-                model=model_name,
-                messages=messages,
-                temperature=1.0,
-            )
-            response = completion.choices[0].message.content.strip()
-
-            parsed_response = json.loads(response)
-            if not isinstance(parsed_response, list):
-                raise ValueError("Invalid response format.")
-
-            results[scenario_id] = {
-                "type": "success",
-                "response": response
-            }
-
-        except Exception as e:
-            print(f"Error on {scenario_id}.")
-            results[scenario_id] = {
-                "type": "error",
-                "response": response
-            }
-
-def assess_on_llama_multi():
-    system_prompt = make_multi_task_prompt(
-        "6. Use double quotes, **avoid single quotes** in your reply."
-    )
-
-    for scenario_id, scenario_data in scenarios.items():
-        role = scenario_data.get("role", "Unknown Role")
-        tasks = scenario_data.get("tasks", {})
-        sub_tasks = extract_sub_tasks(tasks)
-        tools_data = scenario_data.get("tools", {})
-
-        # Convert tools_data (dict) to JSON string for display
-        tools_json = json.dumps(tools_data, indent=2)
-
-        print(f"Assessing {scenario_id}.")
-
-        # Build messages for the model
-        messages = [
-            {"role": "system", "content": system_prompt},
-            {
-                "role": "user",
-                "content": f"User Role: {role}\nTask: {sub_tasks}\nAvailable Tools: {tools_json}"
-            }
-        ]
-
-        # print(f"User Role: {role}\nTask: {sub_tasks}\nAvailable Tools: {tools_json}")
-
-        response = ""
-        try:
-            completion = dashscope.Generation.call(
-                api_key=settings.qwen_api_key,
-                model=model_name,
-                messages=messages,
-                result_format='message'
-            )
-            time.sleep(5) # consider rate limit, if error occurs, increase the sleep time
-            response = completion.output.choices[0].message.content.strip()
-
-            parsed_response = json.loads(response)
-            if not isinstance(parsed_response, list):
-                raise ValueError("Invalid response format.")
-
-            results[scenario_id] = {
-                "type": "success",
-                "response": response
-            }
-
-        except Exception as e:
-            print(f"Error on {scenario_id}.")
-            results[scenario_id] = {
-                "type": "error",
-                "response": response
-            }
+def assess_on_together_multi(rule=""):
+    together_agent = TogetherAgent(model_name)
+    system_prompt = make_multi_task_prompt(rule)
+    assess_multi_task(agent=together_agent, system_prompt=system_prompt)
 
 multi_task_file = settings.MULTI_TASK_DATA_PATH  # Path to multi-task scenarios
 output_path = settings.MULTI_TASK_OUTPUT_PATH  # Path to save the results
@@ -257,9 +121,9 @@ if model_name in ["test"]:
 elif model_name in ["gpt-4o", "o1"]:
     assess_on_openai_multi()
 elif model_name in ["qwen-max", "qwen2.5-7b-instruct-1m", "deepseek-r1", "deepseek-v3"]:
-    assess_on_openai_compatible_multi(key=settings.qwen_api_key, url="https://dashscope.aliyuncs.com/compatible-mode/v1")
-elif model_name in ["llama3.2-3b-instruct", "chatglm3-6b"]:
-    assess_on_llama_multi()
+    assess_on_qwen_multi()
+elif model_name in ["llama3.2-3b-instruct", "llama-3.3-70B"]:
+    assess_on_together_multi(rule="6. Use double quotes, **avoid single quotes** in your reply.")
 elif model_name in ["glm-4-plus"]:
     assess_on_openai_compatible_multi(key=settings.zhipu_api_key, url="https://open.bigmodel.cn/api/paas/v4/")
 elif model_name in ["Baichuan4-Turbo"]:

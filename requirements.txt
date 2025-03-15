@@ -4,13 +4,6 @@ openai
 scikit-learn
 dashscope
 streamlit
-langchain-openai
-langchain-community
-langchain-core
-langchain-experimental
-langgraph
-ipython
-huggingface-hub
-fastchat
 pandas
 numpy
+altair

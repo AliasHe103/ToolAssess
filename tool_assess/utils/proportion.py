@@ -1,5 +1,4 @@
 import json
-from collections import Counter
 
 # Load dataset
 filepath = "../data/single_task.json"
@@ -18,6 +17,6 @@ total = sum(results_count.values())
 proportions = {key: f"{(value / total * 100):.2f}%" for key, value in results_count.items()}
 
 # Display results
-print("分类比例统计：")
+print("Results：")
 for category, proportion in proportions.items():
     print(f"{category}: {proportion}")
