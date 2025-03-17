@@ -79,7 +79,7 @@ $$F1=\frac{2 * Precision * Recall}{Precision+Recall}$$
 这样，原本的三分类问题变成了["true tool", "false tool", "no tool","cannot be completed"]的四分类问题。  
 在**单任务场景**下，
 评估模型的**工具选择能力**，即测试模型**能否正确识别出任务需要使用工具，并选择正确的工具"**。  
-这不在是一个三分类问题，因为"requires tool"的具体结果可能是各种各样的工具名，事实上，这是一个多分类问题。  
+这不再是一个三分类问题，因为"requires tool"的具体结果可能是各种各样的工具名，事实上，这是一个多分类问题。  
 为了简化该问题，我将"requires tool"的分类结果细化为"true tool"和"false tool"，其中"true tool"表示模型预测结果和正确结果都为"requires tool"且工具名相同，"false tool"表示模型预测结果和正确结果都为"requires tool"且工具名不同。  
 这样，问题就变成了["true tool", "false tool", "no tool","cannot be completed"]的四分类问题。  
 不过，这种定义下，仍然存在一个问题，真实标签中只含有"true tool"而不会含有"false tool"。其后果是：  
@@ -154,7 +154,7 @@ ASA仍然考虑的是各场景中的完全正确率，PSA考虑的是总体子�
 # 3. 综合评价
 
 上述研究中已经完成了在两种场景（单任务、多任务）下对两种能力意识（工具使用意识、工具选择能力）的测试，  
-于是对于每个测试模型，可以获得四种情况下的结果。
+于是对于每个测试模型，可以获得四种情况：[情况1](#211-工具使用意识)、[情况2](#212-工具选择能力)、[情况3](#221-工具使用意识)、[情况4](#222-工具选择能力)下的结果。
 
 ### 3.1 评估方法
 
@@ -197,10 +197,10 @@ $$W_i = \frac{\text{Var}(X_i)}{\sum \text{Var}(X_j)}$$
 
 🔍 **综合分数的计算**
 
-通过方差贡献法计算出了上述四种情况下的评估分数，即
-单任务场景下的工具使用意识分数（tool usage score in single-task scenario, $ST\text{-}TUS$），
-单任务场景下的工具选择能力分数（tool selection score in single-task scenario, $ST\text{-}TSS$），
-多任务场景下的工具使用意识分数（tool usage score in multi-task scenario, $MT\text{-}TUS$）和
+通过方差贡献法计算出了上述四种情况下的评估分数，即  
+单任务场景下的工具使用意识分数（tool usage score in single-task scenario, $ST\text{-}TUS$），  
+单任务场景下的工具选择能力分数（tool selection score in single-task scenario, $ST\text{-}TSS$），  
+多任务场景下的工具使用意识分数（tool usage score in multi-task scenario, $MT\text{-}TUS$）和  
 多任务场景下的工具选择能力分数（tool selection score in multi-task scenario, $MT\text{-}TSS$）  
 
 收集到上述结果后，通过下面的公式计算综合分数TAS：  
@@ -211,8 +211,10 @@ $$TAS = \alpha \cdot ST\text{-}TUS + \beta \cdot ST\text{-}TSS + \gamma \cdot MT
 
 ### 4.1 发现的问题
 
-1. 模型llama-3.2-3B对提示词（英文）的理解力很差，即使我多次修改规则以适应该模型，其仍然无法完成所有测试，而且该模型的回复格式随机性太强，甚至经常无视提示词的要求。
+1. 测试中发现，模型llama-3.2-3B对提示词（英文）的理解力很差，即使我多次修改规则以适应该模型、规范其格式，其仍然无法完成所有测试。而且该模型的回复格式随机性太强，甚至经常无视提示词的格式要求，
 因此我不得不手动修改其数据格式。
+2. 工具使用能力和模型规模有一定关系，但是结果中发现规模相对较小的qwen2.5-7b在综合分数和四个具体场景测试中显著高于规模更大的llama-3.3-70B和Baichuan4-Turbo，这说明部分规模较大的模型工具使用能力不足，需要进一步优化。
+3. 许多国产模型，例如deepseek的r1和v3、智谱的glm-4表现良好，和业内一流的模型o1与gpt-4o表现比较接近。这是一个很好的现象。
 
 ### 4.2 评估结果
 
@@ -220,3 +222,8 @@ $$TAS = \alpha \cdot ST\text{-}TUS + \beta \cdot ST\text{-}TSS + \gamma \cdot MT
 ![TAS分数](assets/tas_of_all_agents.svg)
 ![各项任务分数](assets/individual_tasks.svg)  
 [各任务评测结果](assets/individual_tasks.csv)
+
+通过运行下面的代码以在浏览器中详细查看测试结果：
+```shell
+python -m start gpt-4o score
+```
