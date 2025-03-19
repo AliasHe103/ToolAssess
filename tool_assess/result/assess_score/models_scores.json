@@ -1,0 +1,222 @@
+{
+    "deepseek-r1": {
+        "SingleTaskToolUsage": {
+            "Accuracy": 0.78,
+            "Precision": 0.7797499999999999,
+            "Recall": 0.78,
+            "F1 Score": 0.7790187590187589
+        },
+        "SingleTaskToolSelection": {
+            "Accuracy": 0.74,
+            "Precision": 0.7931034482758621,
+            "Recall": 0.7666666666666667,
+            "F1 Score": 0.7796610169491526
+        },
+        "MultiTaskToolUsage": {
+            "ASA": 0.7,
+            "PSA": 0.8944444444444445
+        },
+        "MultiTaskToolSelection": {
+            "ASA": 0.6666666666666666,
+            "PSA": 0.8638888888888889
+        }
+    },
+    "deepseek-v3": {
+        "SingleTaskToolUsage": {
+            "Accuracy": 0.76,
+            "Precision": 0.7827272727272728,
+            "Recall": 0.76,
+            "F1 Score": 0.7671967213114754
+        },
+        "SingleTaskToolSelection": {
+            "Accuracy": 0.74,
+            "Precision": 0.8148148148148148,
+            "Recall": 0.7333333333333333,
+            "F1 Score": 0.7719298245614035
+        },
+        "MultiTaskToolUsage": {
+            "ASA": 0.6666666666666666,
+            "PSA": 0.8916666666666668
+        },
+        "MultiTaskToolSelection": {
+            "ASA": 0.5666666666666667,
+            "PSA": 0.8527777777777779
+        }
+    },
+    "qwen-max": {
+        "SingleTaskToolUsage": {
+            "Accuracy": 0.7,
+            "Precision": 0.6850977443609022,
+            "Recall": 0.7,
+            "F1 Score": 0.6764901185770751
+        },
+        "SingleTaskToolSelection": {
+            "Accuracy": 0.68,
+            "Precision": 0.6944444444444444,
+            "Recall": 0.8333333333333334,
+            "F1 Score": 0.7575757575757576
+        },
+        "MultiTaskToolUsage": {
+            "ASA": 0.6,
+            "PSA": 0.8666666666666668
+        },
+        "MultiTaskToolSelection": {
+            "ASA": 0.5666666666666667,
+            "PSA": 0.8444444444444446
+        }
+    },
+    "gpt-4o": {
+        "SingleTaskToolUsage": {
+            "Accuracy": 0.74,
+            "Precision": 0.7756489028213166,
+            "Recall": 0.74,
+            "F1 Score": 0.7474578005115089
+        },
+        "SingleTaskToolSelection": {
+            "Accuracy": 0.76,
+            "Precision": 0.8214285714285714,
+            "Recall": 0.7666666666666667,
+            "F1 Score": 0.7931034482758621
+        },
+        "MultiTaskToolUsage": {
+            "ASA": 0.7,
+            "PSA": 0.9111111111111112
+        },
+        "MultiTaskToolSelection": {
+            "ASA": 0.5666666666666667,
+            "PSA": 0.8722222222222223
+        }
+    },
+    "o1": {
+        "SingleTaskToolUsage": {
+            "Accuracy": 0.74,
+            "Precision": 0.7882142857142856,
+            "Recall": 0.74,
+            "F1 Score": 0.7460471380471381
+        },
+        "SingleTaskToolSelection": {
+            "Accuracy": 0.76,
+            "Precision": 0.875,
+            "Recall": 0.7,
+            "F1 Score": 0.7777777777777778
+        },
+        "MultiTaskToolUsage": {
+            "ASA": 0.7,
+            "PSA": 0.9194444444444444
+        },
+        "MultiTaskToolSelection": {
+            "ASA": 0.6666666666666666,
+            "PSA": 0.8972222222222221
+        }
+    },
+    "qwen2.5-7b-instruct-1m": {
+        "SingleTaskToolUsage": {
+            "Accuracy": 0.76,
+            "Precision": 0.776025641025641,
+            "Recall": 0.76,
+            "F1 Score": 0.7422857142857143
+        },
+        "SingleTaskToolSelection": {
+            "Accuracy": 0.64,
+            "Precision": 0.6764705882352942,
+            "Recall": 0.7666666666666667,
+            "F1 Score": 0.71875
+        },
+        "MultiTaskToolUsage": {
+            "ASA": 0.5,
+            "PSA": 0.8166666666666668
+        },
+        "MultiTaskToolSelection": {
+            "ASA": 0.4666666666666667,
+            "PSA": 0.7694444444444445
+        }
+    },
+    "glm-4-plus": {
+        "SingleTaskToolUsage": {
+            "Accuracy": 0.72,
+            "Precision": 0.7241428571428571,
+            "Recall": 0.72,
+            "F1 Score": 0.7109024309024309
+        },
+        "SingleTaskToolSelection": {
+            "Accuracy": 0.72,
+            "Precision": 0.7352941176470589,
+            "Recall": 0.8333333333333334,
+            "F1 Score": 0.78125
+        },
+        "MultiTaskToolUsage": {
+            "ASA": 0.7,
+            "PSA": 0.9222222222222223
+        },
+        "MultiTaskToolSelection": {
+            "ASA": 0.5333333333333333,
+            "PSA": 0.8750000000000001
+        }
+    },
+    "Baichuan4-Turbo": {
+        "SingleTaskToolUsage": {
+            "Accuracy": 0.62,
+            "Precision": 0.46476190476190465,
+            "Recall": 0.62,
+            "F1 Score": 0.5310010537407798
+        },
+        "SingleTaskToolSelection": {
+            "Accuracy": 0.58,
+            "Precision": 0.6153846153846154,
+            "Recall": 0.8,
+            "F1 Score": 0.6956521739130435
+        },
+        "MultiTaskToolUsage": {
+            "ASA": 0.4666666666666667,
+            "PSA": 0.788888888888889
+        },
+        "MultiTaskToolSelection": {
+            "ASA": 0.43333333333333335,
+            "PSA": 0.7499999999999999
+        }
+    },
+    "llama-3.3-70B": {
+        "SingleTaskToolUsage": {
+            "Accuracy": 0.66,
+            "Precision": 0.6385000000000001,
+            "Recall": 0.66,
+            "F1 Score": 0.6256545589325425
+        },
+        "SingleTaskToolSelection": {
+            "Accuracy": 0.64,
+            "Precision": 0.6578947368421053,
+            "Recall": 0.8333333333333334,
+            "F1 Score": 0.7352941176470589
+        },
+        "MultiTaskToolUsage": {
+            "ASA": 0.5,
+            "PSA": 0.8000000000000002
+        },
+        "MultiTaskToolSelection": {
+            "ASA": 0.43333333333333335,
+            "PSA": 0.7416666666666666
+        }
+    },
+    "llama-3.2-3B": {
+        "SingleTaskToolUsage": {
+            "Accuracy": 0.66,
+            "Precision": 0.5758333333333333,
+            "Recall": 0.66,
+            "F1 Score": 0.5994259621656881
+        },
+        "SingleTaskToolSelection": {
+            "Accuracy": 0.52,
+            "Precision": 0.5882352941176471,
+            "Recall": 0.6666666666666666,
+            "F1 Score": 0.625
+        },
+        "MultiTaskToolUsage": {
+            "ASA": 0.36666666666666664,
+            "PSA": 0.6972222222222222
+        },
+        "MultiTaskToolSelection": {
+            "ASA": 0.23333333333333334,
+            "PSA": 0.5444444444444444
+        }
+    }
+}

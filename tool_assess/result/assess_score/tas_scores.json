@@ -1,0 +1,12 @@
+{
+    "deepseek-r1": 75.78,
+    "deepseek-v3": 72.6,
+    "qwen-max": 68.28,
+    "gpt-4o": 73.73,
+    "o1": 76.57,
+    "qwen2.5-7b-instruct-1m": 63.45,
+    "glm-4-plus": 71.83,
+    "Baichuan4-Turbo": 56.01,
+    "llama-3.3-70B": 59.77,
+    "llama-3.2-3B": 46.61
+}
