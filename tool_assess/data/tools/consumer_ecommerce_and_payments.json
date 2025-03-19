@@ -1,0 +1,9 @@
+{
+  "Amazon Product Advertising API": "The official Amazon API for retrieving product prices, discounts, and user reviews, useful for e-commerce data analysis and recommendation systems.",
+  "Shopify API": "Enables access to Shopify store data, supporting inventory management, order processing, and store analytics.",
+  "eBay API": "Allows interaction with eBay's marketplace, including product listing and search capabilities.",
+  "Walmart API": "Provides access to Walmart's product catalog, pricing data, and inventory management.",
+  "Stripe": "A leading online payment processing tool that supports subscription management, credit card transactions, and secure payments.",
+  "PayPal API": "Handles online transactions, payment processing, and secure digital wallets.",
+  "Plaid API": "Enables financial account verification, banking transactions, and spending insights."
+}

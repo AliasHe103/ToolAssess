@@ -1,0 +1,7 @@
+{
+  "Google Translate API": "Supports automatic translation in hundreds of languages, making it ideal for general text translation and real-time multilingual conversations.",
+  "Natural Language API": "Provides text analysis, sentiment detection, syntax parsing, and named entity recognition for natural language processing tasks.",
+  "Hugging Face Inference API": "Supports a wide range of AI model inferences, including natural language processing, computer vision, and speech recognition.",
+  "IBM Watson API": "Provides AI-powered NLP, image recognition, and business process automation.",
+  "DeepL API": "A high-quality machine translation service known for its natural and fluent translations."
+}

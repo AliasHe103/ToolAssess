@@ -1,0 +1,7 @@
+{
+  "WHO API": "The official World Health Organization API, providing global health data, disease statistics, and epidemic monitoring information.",
+  "Apple HealthKit": "A health data management tool within the iOS ecosystem, supporting heart rate tracking, fitness monitoring, and nutrition insights.",
+  "Fitbit API": "Tracks user health metrics such as steps, heart rate, and sleep patterns.",
+  "Google Fit API": "Provides access to fitness and health tracking data from Android devices.",
+  "MyFitnessPal API": "Manages nutrition tracking, calorie counting, and dietary insights."
+}

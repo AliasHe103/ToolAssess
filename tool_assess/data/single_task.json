@@ -1,0 +1,527 @@
+{
+  "op1": {
+    "query": "Check stock price history for Apple Inc.",
+    "tools": {
+      "Alpha Vantage": "Provides real-time and historical financial market data via APIs, enabling LLMs to access comprehensive financial information for user inquiries.",
+      "OpenWeatherMap": "A leading weather API providing real-time forecasts, air quality monitoring, and historical climate data worldwide."
+    },
+    "result": "requires tool",
+    "solving_tool": "Alpha Vantage"
+  },
+  "op2": {
+    "query": "Summarize the latest scientific research on quantum computing",
+    "tools": {
+      "Google Scholar": "The largest academic search engine, indexing papers, conference proceedings, books, and patents for scientific research and academic queries.",
+      "PubMed": "A biomedical and life sciences literature search engine, providing peer-reviewed medical research papers and clinical studies."
+    },
+    "result": "requires tool",
+    "solving_tool": "Google Scholar"
+  },
+  "op3": {
+    "query": "What is the capital city of France?",
+    "tools": {
+      "Wikipedia": "Accesses extensive articles and knowledge for LLMs, enabling them to provide factual, well-rounded responses to inquiries.",
+      "Reddit API": "Accesses Reddit community discussions, offering insights into public opinions, deep discussions, and trending topics."
+    },
+    "result": "no tool",
+    "solving_tool": ""
+  },
+  "op4": {
+    "query": "Find the nearest Italian restaurant for me.",
+    "tools": {
+      "Google Maps API": "Provides detailed mapping, geolocation, route planning, and local business information for navigation and geographic queries.",
+      "DuckDuckGo Search": "A privacy-focused search engine that does not store user data, ideal for anonymous queries and secure browsing."
+    },
+    "result": "requires tool",
+    "solving_tool": "Google Maps API"
+  },
+  "op5": {
+    "query": "Calculate the square root of 2025.",
+    "tools": {
+      "Wolfram Alpha": "Acts as a computational knowledge engine for LLMs, enabling complex calculations and structured data retrieval.",
+      "Tavily Search": "An AI-optimized search engine designed for precise, structured search results, ideal for efficient information retrieval and data analysis."
+    },
+    "result": "no tool",
+    "solving_tool": ""
+  },
+  "op6": {
+    "query": "Predict the weather in Paris next year.",
+    "tools": {
+      "OpenWeatherMap": "A leading weather API providing real-time forecasts, air quality monitoring, and historical climate data worldwide.",
+      "Google Trends": "Tracks and analyzes trending search data, enabling LLMs to provide insight into current public interests and topics.",
+      "Cloudflare API": "Provides web security, performance optimizations, and DDoS protection for online applications."
+    },
+    "result": "cannot be completed",
+    "solving_tool": ""
+  },
+  "op7": {
+    "query": "I need you help me translate a poem into Japanese。",
+    "tools": {
+      "DeepL API": "A high-quality machine translation service known for its natural and fluent translations.",
+      "Twitter API": "Enables access to Twitter data, supporting social media analytics, sentiment tracking, and trend analysis.",
+      "Natural Language API": "Provides text analysis, sentiment detection, syntax parsing, and named entity recognition for natural language processing tasks."
+    },
+    "result": "requires tool",
+    "solving_tool": "Natural Language API"
+  },
+  "op8": {
+    "query": "Book a flight from New York to Tokyo",
+    "tools": {
+      "Kayak": "A travel search aggregator for flights, hotels, and car rentals.",
+      "PubMed": "A biomedical and life sciences literature search engine, providing peer-reviewed medical research papers and clinical studies.",
+      "Google Search": "The world's most comprehensive search engine, providing real-time updates for fact-checking and general knowledge retrieval."
+    },
+    "result": "requires tool",
+    "solving_tool": "Kayak"
+  },
+  "op9": {
+    "query": "I want to know the latest Apple Inc. earnings report.",
+    "tools": {
+      "ArXivAPIWrapper": "Retrieves scientific preprints on topics like physics, math, and computer science from arXiv.org.",
+      "Yahoo Finance": "Aggregates financial market news, data analysis, and company reports to help users stay updated on market trends and investment opportunities.",
+      "Tavily Search": "An AI-optimized search engine designed for precise, structured search results, ideal for efficient information retrieval and data analysis."
+    },
+    "result": "requires tool",
+    "solving_tool": "Yahoo Finance"
+  },
+  "op10": {
+    "query": "Create a secure token transaction on blockchain.",
+    "tools": {
+      "Spotify API": "A music streaming API that enables access to playlists, song recommendations, and user music preferences.",
+      "AINetwork Toolkit": "Interacts with the AINetwork Blockchain to transfer tokens, manage data, and create applications.",
+      "Reddit API": "Accesses Reddit community discussions, offering insights into public opinions, deep discussions, and trending topics."
+    },
+    "result": "requires tool",
+    "solving_tool": "AINetwork Toolkit"
+  },
+  "op11": {
+    "query": "I am seeking employment, help me analyze the trends.",
+    "tools": {
+      "LinkedIn API": "Supports professional networking, job listings, and company data analytics.",
+      "Google Trends": "Tracks and analyzes trending search data, enabling LLMs to provide insight into current public interests and topics.",
+      "Reddit API": "Accesses Reddit community discussions, offering insights into public opinions, deep discussions, and trending topics."
+    },
+    "result": "requires tool",
+    "solving_tool": "LinkedIn API"
+  },
+  "op12": {
+    "query": "Organize a meeting next weekend at 10 AM.",
+    "tools": {
+      "Trello API": "Provides access to Trello board data, facilitating project management, task tracking, and team collaboration.",
+      "Twitter API": "Enables access to Twitter data, supporting social media analytics, sentiment tracking, and trend analysis.",
+      "Slack API": "A team communication and collaboration platform API, supporting message automation, notifications, and workflow management."
+    },
+    "result": "requires tool",
+    "solving_tool": "Slack API"
+  },
+  "op13": {
+    "query": "I want professional medical references about the health benefits of drinking green tea. Please provide data from credible, specialized sources.",
+    "tools": {
+      "Wikipedia": "Accesses extensive articles and knowledge for LLMs, enabling them to provide factual, well-rounded responses to inquiries.",
+      "Google Search": "The world's most comprehensive search engine, providing real-time updates for fact-checking and general knowledge retrieval.",
+      "PubMed": "A biomedical and life sciences literature search engine, providing peer-reviewed medical research papers and clinical studies."
+    },
+    "result": "requires tool",
+    "solving_tool": "PubMed"
+  },
+  "op14": {
+    "query": "Help me compute payments for an online purchase securely.",
+    "tools": {
+      "CoinGecko API": "Fetches cryptocurrency market data, including prices, market capitalization, and historical trends.",
+      "Stripe": "A leading online payment processing tool that supports subscription management, credit card transactions, and secure payments.",
+      "YouTube API": "The largest video platform API, allowing video searches, playback, comment analysis, and channel management."
+    },
+    "result": "requires tool",
+    "solving_tool": "Stripe"
+  },
+  "op15": {
+    "query": "Generate a new catchy tune for a music video.",
+    "tools": {
+      "DALL-E API": "A text-to-image AI generator that creates high-quality images, ideal for visual content creation and design assistance.",
+      "Google Search": "The world's most comprehensive search engine, providing real-time updates for fact-checking and general knowledge retrieval.",
+      "Spotify API": "A music streaming API that enables access to playlists, song recommendations, and user music preferences."
+    },
+    "result": "cannot be completed",
+    "solving_tool": ""
+  },
+  "op16": {
+    "query": "What is the latest headlines in technology? Retrieve it.",
+    "tools": {
+      "AskNews": "A global news aggregation tool that delivers real-time summaries from major media sources, ideal for news monitoring and analysis.",
+      "Brave Search": "Offers independent search results without relying on other engines, providing LLMs with unbiased online content while maintaining user privacy.",
+      "Google Scholar": "The largest academic search engine, indexing papers, conference proceedings, books, and patents for scientific research and academic queries."
+    },
+    "result": "requires tool",
+    "solving_tool": "AskNews"
+  },
+  "op17": {
+    "query": "What should I wear today in Paris if it is raining?",
+    "tools": {
+      "Reddit API": "Accesses Reddit community discussions, offering insights into public opinions, deep discussions, and trending topics.",
+      "OpenWeatherMap": "A leading weather API providing real-time forecasts, air quality monitoring, and historical climate data worldwide.",
+      "IBM Watson API": "Provides AI-powered NLP, image recognition, and business process automation."
+    },
+    "result": "no tool",
+    "solving_tool": ""
+  },
+  "op18": {
+    "query": "Identify the bird species in this image.",
+    "tools": {
+      "YouTube API": "The largest video platform API, allowing video searches, playback, comment analysis, and channel management.",
+      "GitHub API": "The world's largest code hosting platform API, offering repository management, version control, and collaborative development capabilities.",
+      "Google Search": "The world's most comprehensive search engine, providing real-time updates for fact-checking and general knowledge retrieval."
+    },
+    "result": "requires tool",
+    "solving_tool": "cannot be completed"
+  },
+  "op19": {
+    "query": "I need you to draw a chart from the Excel file on the company chat channel.",
+    "tools": {
+      "VirusTotal API": "Analyzes files and URLs for potential malware threats using multiple antivirus engines.",
+      "Slack API": "A team communication and collaboration platform API, supporting message automation, notifications, and workflow management.",
+      "Google Search": "The world's most comprehensive search engine, providing real-time updates for fact-checking and general knowledge retrieval."
+    },
+    "result": "cannot be completed",
+    "solving_tool": ""
+  },
+  "op20": {
+    "query": "Find a good investment opportunity in tech stocks.",
+    "tools": {
+      "Google Trends": "Tracks and analyzes trending search data, enabling LLMs to provide insight into current public interests and topics.",
+      "Alpha Vantage": "A financial data API offering real-time stock market data, forex, and cryptocurrency insights, supporting technical analysis and investment research.",
+      "Stripe": "A leading online payment processing tool that supports subscription management, credit card transactions, and secure payments."
+    },
+    "result": "requires tool",
+    "solving_tool": "Alpha Vantage"
+  },
+  "op21": {
+    "query": "Locate a local bookstore that offers an open reading area, ideally with a small cafe inside.",
+    "tools": {
+      "Google Maps API": "Provides detailed mapping, geolocation, route planning, and local business information for navigation and geographic queries.",
+      "DuckDuckGo Search": "A privacy-focused search engine that does not store user data, ideal for anonymous queries and secure browsing.",
+      "AWS Lambda": "Enables serverless application development on AWS, allowing you to run code without managing servers."
+    },
+    "result": "requires tool",
+    "solving_tool": "Google Maps API"
+  },
+  "op22": {
+    "query": "Proofread and fix grammar mistakes for a short story I've written, focusing on clarity and correctness.",
+    "tools": {
+      "Natural Language API": "Provides text analysis, sentiment detection, syntax parsing, and named entity recognition for natural language processing tasks.",
+      "Twitter API": "Enables access to Twitter data, supporting social media analytics, sentiment tracking, and trend analysis.",
+      "Google Translate API": "Supports automatic translation in hundreds of languages, making it ideal for general text translation and real-time multilingual conversations."
+    },
+    "result": "requires tool",
+    "solving_tool": "Natural Language API"
+  },
+  "op23": {
+    "query": "Generate an image of a futuristic city.",
+    "tools": {
+      "Docker Hub API": "Enables access to containerized applications and manages Docker images in cloud environments.",
+      "DALL-E API": "A text-to-image AI generator that creates high-quality images, ideal for visual content creation and design assistance.",
+      "Google Search": "The world's most comprehensive search engine, providing real-time updates for fact-checking and general knowledge retrieval."
+    },
+    "result": "requires tool",
+    "solving_tool": "DALL-E API"
+  },
+  "op24": {
+    "query": "Is there any website offering service for me to build a server? Find them for me.",
+    "tools": {
+      "AWS S3 API": "A cloud storage service that allows scalable storage and retrieval of large data sets.",
+      "Google Cloud Functions API": "Runs event-driven serverless functions for cloud automation and real-time data processing.",
+      "Google Search": "The world's most comprehensive search engine, providing real-time updates for fact-checking and general knowledge retrieval."
+    },
+    "result": "requires tool",
+    "solving_tool": "Google Search"
+  },
+  "op25": {
+    "query": "Check the current weather in Tokyo. Is it raining?",
+    "tools": {
+      "Have I Been Pwned API": "Checks if an email address has been exposed in known data breaches, enhancing security awareness.",
+      "Google Translate API": "Supports automatic translation in hundreds of languages, making it ideal for general text translation and real-time multilingual conversations.",
+      "Google Calendar API": "Enables scheduling management, event reminders, and cross-platform calendar synchronization for task organization and time management."
+    },
+    "result": "cannot be completed",
+    "solving_tool": ""
+  },
+  "op26": {
+    "query": "What is 5 factorial in math?",
+    "tools": {
+      "Plaid API": "Enables financial account verification, banking transactions, and spending insights.",
+      "Wolfram Alpha": "Acts as a computational knowledge engine for LLMs, enabling complex calculations and structured data retrieval.",
+      "Python REPL": "A runtime environment for executing Python code instantly, useful for mathematical calculations, data processing, and logic validation."
+    },
+    "result": "no tool",
+    "solving_tool": ""
+  },
+  "op27": {
+    "query": "Analyze a given paragraph, then answer me: what might the character be thinking and feeling in the story?",
+    "tools": {
+      "Google Search": "The world's most comprehensive search engine, providing real-time updates for fact-checking and general knowledge retrieval.",
+      "Google Translate API": "Supports automatic translation in hundreds of languages, making it ideal for general text translation and real-time multilingual conversations.",
+      "Natural Language API": "Provides text analysis, sentiment detection, syntax parsing, and named entity recognition for natural language processing tasks."
+    },
+    "result": "requires tool",
+    "solving_tool": "Natural Language API"
+  },
+  "op28": {
+    "query": "Providing that you are given a research paper on quantum mechanics, can you summarize it?",
+    "tools": {
+      "ArXivAPIWrapper": "Retrieves scientific preprints on topics like physics, math, and computer science from arXiv.org.",
+      "Google Scholar": "The largest academic search engine, indexing papers, conference proceedings, books, and patents for scientific research and academic queries.",
+      "Google Search": "The world's most comprehensive search engine, providing real-time updates for fact-checking and general knowledge retrieval."
+    },
+    "result": "no tool",
+    "solving_tool": ""
+  },
+  "op29": {
+    "query": "Analyze heart rate trends for me over the past week.",
+    "tools": {
+      "Google Trends": "Tracks and analyzes trending search data, enabling LLMs to provide insight into current public interests and topics.",
+      "Fitbit API": "Tracks user health metrics such as steps, heart rate, and sleep patterns.",
+      "WHO API": "The official World Health Organization API, providing global health data, disease statistics, and epidemic monitoring information."
+    },
+    "result": "requires tool",
+    "solving_tool": "Fitbit API"
+  },
+  "op30": {
+    "query": "Can you help me schedule the latest fitness trends and workout routines?",
+    "tools": {
+      "CoinGecko API": "Fetches cryptocurrency market data, including prices, market capitalization, and historical trends.",
+      "MyFitnessPal API": "Manages nutrition tracking, calorie counting, and dietary insights.",
+      "Slack API": "A team communication and collaboration platform API, supporting message automation, notifications, and workflow management."
+    },
+    "result": "requires tool",
+    "solving_tool": "MyFitnessPal API"
+  },
+  "op31": {
+    "query": "Which university will definitely rank #1 in computer science ten years from now?",
+    "tools": {
+      "YouTube API": "The largest video platform API, allowing video searches, playback, comment analysis, and channel management.",
+      "Google Scholar": "The largest academic search engine, indexing papers, conference proceedings, books, and patents for scientific research and academic queries.",
+      "OpenWeatherMap": "A leading weather API providing real-time forecasts, air quality monitoring, and historical climate data worldwide.",
+      "Google Search": "The world's most comprehensive search engine, providing real-time updates for fact-checking and general knowledge retrieval."
+    },
+    "result": "cannot be completed",
+    "solving_tool": ""
+  },
+  "op32": {
+    "query": "Send me the real-time best mobile phone deals right now.",
+    "tools": {
+      "Alpha Vantage": "Provides real-time and historical financial market data via APIs, enabling LLMs to access comprehensive financial information for user inquiries.",
+      "Stripe": "A leading online payment processing tool that supports subscription management, credit card transactions, and secure payments.",
+      "PayPal API": "Handles online transactions, payment processing, and secure digital wallets.",
+      "Amazon Product Advertising API": "The official Amazon API for retrieving product prices, discounts, and user reviews, useful for e-commerce data analysis and recommendation systems."
+    },
+    "result": "cannot be completed",
+    "solving_tool": ""
+  },
+  "op33": {
+    "query": "Is there any email for me? Help me check it.",
+    "tools": {
+      "Have I Been Pwned API": "Checks if an email address has been exposed in known data breaches, enhancing security awareness.",
+      "Gmail Toolkit": "Interacts with the Gmail API to read messages, draft and send emails, and perform other email-related tasks.",
+      "Tavily Search": "An AI-optimized search engine designed for precise, structured search results, ideal for efficient information retrieval and data analysis.",
+      "Cloudflare API": "Provides web security, performance optimizations, and DDoS protection for online applications."
+    },
+    "result": "requires tool",
+    "solving_tool": "Gmail Toolkit"
+  },
+  "op34": {
+    "query": "Retrieve global statistics on recent disease outbreaks and make a summarization.",
+    "tools": {
+      "ArXivAPIWrapper": "Retrieves scientific preprints on topics like physics, math, and computer science from arXiv.org.",
+      "WHO API": "The official World Health Organization API, providing global health data, disease statistics, and epidemic monitoring information.",
+      "AskNews": "A global news aggregation tool that delivers real-time summaries from major media sources, ideal for news monitoring and analysis.",
+      "PubMed": "A biomedical and life sciences literature search engine, providing peer-reviewed medical research papers and clinical studies."
+    },
+    "result": "requires tool",
+    "solving_tool": "WHO API"
+  },
+  "op35": {
+    "query": "Do you know my favorite song? Help me generate a playlist containing 10 songs with similar styles right now.",
+    "tools": {
+      "Spotify API": "A music streaming API that enables access to playlists, song recommendations, and user music preferences.",
+      "GitHub API": "Offers repository management, version control, and collaborative development capabilities.",
+      "Bing Search": "Microsoft’s search engine offering web results, news, images, and more with potential location-aware data.",
+      "Natural Language API": "Provides text analysis, sentiment detection, syntax parsing, and named entity recognition for natural language processing tasks."
+    },
+    "result": "cannot be completed",
+    "solving_tool": ""
+  },
+  "op36": {
+    "query": "Analyze social media sentiment toward the latest breakthrough in Alzheimer's disease treatment announced last week.",
+    "tools": {
+      "AskNews": "A global news aggregation tool that delivers real-time summaries from major media sources, ideal for news monitoring and analysis.",
+      "Twitter API": "Enables access to Twitter data, supporting social media analytics, sentiment tracking, and trend analysis.",
+      "PubMed": "A biomedical and life sciences literature search engine, providing peer-reviewed medical research papers and clinical studies.",
+      "WHO API": "The official World Health Organization API, providing global health data, disease statistics, and epidemic monitoring information."
+    },
+    "result": "requires tool",
+    "solving_tool": "Twitter API"
+  },
+  "op37": {
+    "query": "I need the current guidelines for managing type 2 diabetes provided by global health authorities.",
+    "tools": {
+      "WHO API": "The official World Health Organization API, providing global health data, disease statistics, and epidemic monitoring information.",
+      "Apple HealthKit": "A health data management tool within the iOS ecosystem, supporting heart rate tracking, fitness monitoring, and nutrition insights.",
+      "PubMed": "A biomedical and life sciences literature search engine, providing peer-reviewed medical research papers and clinical studies.",
+      "Google Translate API": "Supports automatic translation in hundreds of languages, making it ideal for general text translation and real-time multilingual conversations."
+    },
+    "result": "cannot be completed",
+    "solving_tool": ""
+  },
+  "op38": {
+    "query": "Find official Docker images for Python with the most pulls.",
+    "tools": {
+      "IBM Watson API": "Provides AI-powered NLP, image recognition, and business process automation.",
+      "DALL-E API": "A text-to-image AI generator that creates high-quality images, ideal for visual content creation and design assistance.",
+      "Docker Hub API": "Enables access to containerized applications and manages Docker images in cloud environments.",
+      "Python REPL": "A runtime environment for executing Python code instantly, useful for mathematical calculations, data processing, and logic validation."
+    },
+    "result": "requires tool",
+    "solving_tool": "Docker Hub API"
+  },
+  "op39": {
+    "query": "Retrieve comprehensive market sentiment analysis and real-time public opinions regarding Tesla's latest quarterly earnings report.",
+    "tools": {
+      "CoinGecko API": "Fetches cryptocurrency market data, including prices, market capitalization, and historical trends.",
+      "Alpha Vantage": "A financial data API offering real-time stock market data, forex, and cryptocurrency insights, supporting market trends and investment analysis.",
+      "Twitter API": "Enables access to Twitter data, supporting social media analytics, sentiment tracking, and trend analysis.",
+      "Natural Language API": "Provides text analysis, sentiment detection, syntax parsing, and named entity recognition for natural language processing tasks."
+    },
+    "result": "requires tool",
+    "solving_tool": "Twitter API"
+  },
+  "op40": {
+    "query": "I want to collect live data of container ship routes from multiple ports worldwide, cross-reference them with real-time local weather anomalies, and then generate an integrated analysis on how climate events impact shipping efficiency and schedules in real time.",
+    "tools": {
+      "Docker Hub API": "Enables access to containerized applications and manages Docker images in cloud environments.",
+      "OpenWeatherMap": "A leading weather API providing real-time forecasts, air quality monitoring, and historical climate data worldwide.",
+      "Google Maps API": "Provides detailed mapping, geolocation, route planning, and local business information for navigation and geographic queries.",
+      "Twitter API": "Enables access to Twitter data, supporting social media analytics, sentiment tracking, and trend analysis."
+    },
+    "result": "cannot be completed",
+    "solving_tool": ""
+  },
+  "op41": {
+    "query": "I want to retrieve every Slack user’s Apple HealthKit heart rate data.",
+    "tools": {
+      "Slack API": "A team communication and collaboration platform API, supporting message automation, notifications, and workflow management.",
+      "Apple HealthKit": "A health data management tool within the iOS ecosystem, supporting heart rate tracking, fitness monitoring, and nutrition insights.",
+      "WHO API": "The official World Health Organization API, providing global health data, disease statistics, and epidemic monitoring information.",
+      "AWS S3 API": "A cloud storage service that allows scalable storage and retrieval of large data sets.",
+      "Docker Hub API": "Enables access to containerized applications and manages Docker images in cloud environments."
+    },
+    "result": "cannot be completed",
+    "solving_tool": ""
+  },
+  "op42": {
+    "query": "I want to read newly published Chinese bulletins about a disease outbreak in real time, then translate them into English with near-human quality so I can stay updated on the latest developments.",
+    "tools": {
+      "PubMed": "A biomedical and life sciences literature search engine, providing peer-reviewed medical research papers and clinical studies.",
+      "WHO API": "The official World Health Organization API, providing global health data, disease statistics, and epidemic monitoring information.",
+      "DeepL API": "A high-quality machine translation service known for its natural and fluent translations, suitable for professional and multilingual communication.",
+      "Stripe": "A leading online payment processing tool that supports subscription management, credit card transactions, and secure payments.",
+      "Slack API": "A team communication and collaboration platform API, supporting message automation, notifications, and workflow management."
+    },
+    "result": "requires tool",
+    "solving_tool": "DeepL API"
+  },
+  "op43": {
+    "query": "Help me access the full commit history of a private code repository, analyze the code changes for potential security vulnerabilities, and generate a detailed summary of each commit.",
+    "tools": {
+      "GitHub API": "The world's largest code hosting platform API, offering repository management, version control, and collaborative development capabilities.",
+      "Docker Hub API": "Enables access to containerized applications and manages Docker images in cloud environments.",
+      "Slack API": "A team communication and collaboration platform API, supporting message automation, notifications, and workflow management.",
+      "Cloudflare API": "Provides web security, performance optimizations, and DDoS protection for online applications.",
+      "AWS Lambda": "Enables serverless application development on AWS, allowing you to run code without managing servers."
+    },
+    "result": "requires tool",
+    "solving_tool": "GitHub API"
+  },
+  "op44": {
+    "query": "Develop a system that autonomously diagnoses rare genetic disorders by cross-referencing real-time patient genomic data with global medical research databases, then generates personalized treatment plans with drug interaction warnings.",
+    "tools": {
+      "IBM Watson API": "Provides AI-powered NLP, image recognition, and business process automation.",
+      "PubMed": "A biomedical and life sciences literature search engine, providing peer-reviewed medical research papers and clinical studies.",
+      "Python REPL": "A runtime environment for executing Python code instantly, useful for mathematical calculations, data processing, and logic validation.",
+      "DeepMind AlphaFold API": "Predicts protein structures using AI, supporting scientific and medical research.",
+      "Stripe": "A leading online payment processing tool that supports subscription management, credit card transactions, and secure payments."
+    },
+    "result": "cannot be completed",
+    "solving_tool": ""
+  },
+  "op45": {
+    "query": "Book me a flight from Hogwarts to Winterfell.",
+    "tools": {
+      "Azure Container Apps": "A cloud-based secure sandbox environment for remote code execution, ensuring safe and isolated code execution.",
+      "Amadeus Toolkit": "Offers travel APIs for tasks such as searching and booking flights, helping LLMs provide personalized travel recommendations based on user needs.",
+      "DuckDuckGo Search": "A privacy-focused search engine that does not store user data, ideal for anonymous queries and secure browsing.",
+      "OpenWeatherMap": "A leading weather API providing real-time forecasts, air quality monitoring, and historical climate data worldwide.",
+      "Kayak": "A travel search aggregator for flights, hotels, and car rentals."
+    },
+    "result": "requires tool",
+    "solving_tool": "Azure Container Apps"
+  },
+  "op46": {
+    "query": "Can you debug a program for me? Sorry, but I don't remember its format, maybe PE or ELF.",
+    "tools": {
+      "GitHub API": "The world's largest code hosting platform API, offering repository management, version control, and collaborative development capabilities.",
+      "Python REPL": "A runtime environment for executing Python code instantly, useful for mathematical calculations, data processing, and logic validation.",
+      "Docker Hub API": "Enables access to containerized applications and manages Docker images in cloud environments.",
+      "Google Cloud Functions API": "Runs event-driven serverless functions for cloud automation and real-time data processing.",
+      "IBM Watson API": "Provides AI-powered NLP, image recognition, and business process automation."
+    },
+    "result": "requires tool",
+    "solving_tool": "Airtable API"
+  },
+  "op47": {
+    "query": "I am a small business owner, I wonder if you can do something to promote my products. Tell me your advice.",
+    "tools": {
+      "IBM Watson API": "Provides AI-powered NLP, image recognition, and business process automation.",
+      "Yahoo Finance": "Aggregates financial market news, data analysis, and company reports to help users stay updated on market trends and investment opportunities.",
+      "MyFitnessPal API": "Manages nutrition tracking, calorie counting, and dietary insights.",
+      "Google Cloud Functions API": "Runs event-driven serverless functions for cloud automation and real-time data processing.",
+      "Cloudflare API": "Provides web security, performance optimizations, and DDoS protection for online applications."
+    },
+    "result": "no tool",
+    "solving_tool": ""
+  },
+  "op48": {
+    "query": "I am developing a decision support system that requires real-time assistance.",
+    "tools": {
+      "Alpha Vantage": "A financial data API offering real-time stock market data, forex, and cryptocurrency insights, supporting technical analysis and investment research.",
+      "DALL-E API": "A text-to-image AI generator that creates high-quality images, ideal for visual content creation and design assistance.",
+      "Tavily Search": "An AI-optimized search engine designed for precise, structured search results, ideal for efficient information retrieval and data analysis.",
+      "Azure Container Apps": "A cloud-based secure sandbox environment for remote code execution, ensuring safe and isolated code execution.",
+      "Hugging Face Inference API": "Supports a wide range of AI model inferences, including natural language processing, computer vision, and speech recognition."
+    },
+    "result": "requires tool",
+    "solving_tool": "Hugging Face Inference API"
+  },
+  "op49": {
+    "query": "As a Steam player, I really want to play Elden Ring. I hope you make it on sale for me.",
+    "tools": {
+      "DuckDuckGo Search": "A privacy-focused search engine that does not store user data, ideal for anonymous queries and secure browsing.",
+      "Shopify API": "Enables access to Shopify store data, supporting inventory management, order processing, and store analytics.",
+      "Google Scholar": "The largest academic search engine, indexing papers, conference proceedings, books, and patents for scientific research and academic queries.",
+      "LinkedIn API": "Supports professional networking, job listings, and company data analytics.",
+      "Steam Toolkit": "Integrates with the Steam platform, allowing LLMs to assist users in gaming-related queries and community engagements."
+    },
+    "result": "cannot be completed",
+    "solving_tool": ""
+  },
+  "op50": {
+    "query": "Hello, currently I'm creating an online cooking class focused on healthy, calorie-conscious meals. I need comprehensive nutritional data for ingredients, popular global dishes trending in social media discussions, and current recommendations for balanced diets from authoritative health organizations. Can you meet my needs?",
+    "tools": {
+      "MyFitnessPal API": "Provides detailed nutritional information, calorie counting, and dietary insights for a wide range of food ingredients and meals.",
+      "Instagram Graph API": "Provides access to Instagram user posts and insights, suitable for analyzing popular trends and content about food and lifestyle.",
+      "WHO API": "The official World Health Organization API, providing global health data, dietary guidelines, and public health recommendations.",
+      "AWS S3 API": "A cloud storage service for scalable storage and retrieval of data files, suitable for hosting digital content.",
+      "Docker Hub API": "Enables access to containerized applications and manages Docker images in cloud environments."
+    },
+    "result": "cannot be completed",
+    "solving_tool": ""
+  }
+}
