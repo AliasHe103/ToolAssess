@@ -1,0 +1,202 @@
+{
+    "op1": {
+        "type": "requires tool",
+        "response": "requires tool: Alpha Vantage."
+    },
+    "op2": {
+        "type": "requires tool",
+        "response": "requires tool: Google Scholar."
+    },
+    "op3": {
+        "type": "no tool",
+        "response": "no tool."
+    },
+    "op4": {
+        "type": "requires tool",
+        "response": "requires tool: Google Maps API."
+    },
+    "op5": {
+        "type": "no tool",
+        "response": "no tool."
+    },
+    "op6": {
+        "type": "cannot be completed",
+        "response": "cannot be completed."
+    },
+    "op7": {
+        "type": "requires tool",
+        "response": "requires tool: DeepL API."
+    },
+    "op8": {
+        "type": "requires tool",
+        "response": "requires tool: Kayak."
+    },
+    "op9": {
+        "type": "requires tool",
+        "response": "requires tool: Yahoo Finance."
+    },
+    "op10": {
+        "type": "requires tool",
+        "response": "requires tool: AINetwork Toolkit."
+    },
+    "op11": {
+        "type": "requires tool",
+        "response": "requires tool: LinkedIn API."
+    },
+    "op12": {
+        "type": "no tool",
+        "response": "no tool."
+    },
+    "op13": {
+        "type": "requires tool",
+        "response": "requires tool: PubMed."
+    },
+    "op14": {
+        "type": "requires tool",
+        "response": "requires tool: Stripe."
+    },
+    "op15": {
+        "type": "cannot be completed",
+        "response": "cannot be completed."
+    },
+    "op16": {
+        "type": "requires tool",
+        "response": "requires tool: AskNews."
+    },
+    "op17": {
+        "type": "requires tool",
+        "response": "requires tool: OpenWeatherMap."
+    },
+    "op18": {
+        "type": "cannot be completed",
+        "response": "cannot be completed."
+    },
+    "op19": {
+        "type": "no tool",
+        "response": "no tool."
+    },
+    "op20": {
+        "type": "requires tool",
+        "response": "requires tool: Alpha Vantage."
+    },
+    "op21": {
+        "type": "requires tool",
+        "response": "requires tool: Google Maps API."
+    },
+    "op22": {
+        "type": "no tool",
+        "response": "no tool."
+    },
+    "op23": {
+        "type": "requires tool",
+        "response": "requires tool: DALL-E API."
+    },
+    "op24": {
+        "type": "requires tool",
+        "response": "requires tool: Google Search."
+    },
+    "op25": {
+        "type": "cannot be completed",
+        "response": "cannot be completed."
+    },
+    "op26": {
+        "type": "no tool",
+        "response": "no tool."
+    },
+    "op27": {
+        "type": "requires tool",
+        "response": "requires tool: Natural Language API."
+    },
+    "op28": {
+        "type": "no tool",
+        "response": "no tool."
+    },
+    "op29": {
+        "type": "requires tool",
+        "response": "requires tool: Fitbit API."
+    },
+    "op30": {
+        "type": "no tool",
+        "response": "no tool."
+    },
+    "op31": {
+        "type": "cannot be completed",
+        "response": "cannot be completed."
+    },
+    "op32": {
+        "type": "requires tool",
+        "response": "requires tool: Amazon Product Advertising API."
+    },
+    "op33": {
+        "type": "requires tool",
+        "response": "requires tool: Gmail Toolkit."
+    },
+    "op34": {
+        "type": "requires tool",
+        "response": "requires tool: WHO API."
+    },
+    "op35": {
+        "type": "requires tool",
+        "response": "requires tool: Spotify API."
+    },
+    "op36": {
+        "type": "requires tool",
+        "response": "requires tool: Twitter API."
+    },
+    "op37": {
+        "type": "requires tool",
+        "response": "requires tool: WHO API."
+    },
+    "op38": {
+        "type": "requires tool",
+        "response": "requires tool: Docker Hub API."
+    },
+    "op39": {
+        "type": "requires tool",
+        "response": "requires tool: Twitter API."
+    },
+    "op40": {
+        "type": "cannot be completed",
+        "response": "cannot be completed."
+    },
+    "op41": {
+        "type": "cannot be completed",
+        "response": "cannot be completed."
+    },
+    "op42": {
+        "type": "requires tool",
+        "response": "requires tool: DeepL API."
+    },
+    "op43": {
+        "type": "requires tool",
+        "response": "requires tool: GitHub API."
+    },
+    "op44": {
+        "type": "cannot be completed",
+        "response": "cannot be completed."
+    },
+    "op45": {
+        "type": "cannot be completed",
+        "response": "cannot be completed."
+    },
+    "op46": {
+        "type": "no tool",
+        "response": "no tool."
+    },
+    "op47": {
+        "type": "no tool",
+        "response": "no tool."
+    },
+    "op48": {
+        "type": "no tool",
+        "response": "no tool."
+    },
+    "op49": {
+        "type": "cannot be completed",
+        "response": "\"cannot be completed.\""
+    },
+    "op50": {
+        "type": "requires tool",
+        "response": "requires tool: WHO API."
+    }
+}

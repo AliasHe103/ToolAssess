@@ -1,0 +1,122 @@
+{
+    "scenario1": {
+        "type": "success",
+        "response": "[\"requires tool: OpenWeatherMap\", \"requires tool: Google Maps API\", \"requires tool: Google Maps API\", \"cannot be completed\"]"
+    },
+    "scenario2": {
+        "type": "success",
+        "response": "[\"requires tool: Google Scholar\", \"requires tool: Google Search\", \"no tool\"]"
+    },
+    "scenario3": {
+        "type": "success",
+        "response": "[\"requires tool: Google Search\", \"requires tool: Google Search\", \"requires tool: Python REPL\", \"cannot be completed\"]"
+    },
+    "scenario4": {
+        "type": "success",
+        "response": "[\"requires tool: Amazon Product Advertising API\", \"requires tool: Amazon Product Advertising API\", \"requires tool: Google Maps\", \"requires tool: Google Maps\"]"
+    },
+    "scenario5": {
+        "type": "success",
+        "response": "[\"requires tool: DeepL API\", \"requires tool: WHO API\", \"cannot be completed\"]"
+    },
+    "scenario6": {
+        "type": "success",
+        "response": "[\"requires tool: Google Maps API\", \"requires tool: Google Maps API\", \"cannot be completed\"]"
+    },
+    "scenario7": {
+        "type": "success",
+        "response": "[\"requires tool: Google Search\", \"requires tool: Google Search\", \"cannot be completed\"]"
+    },
+    "scenario8": {
+        "type": "success",
+        "response": "[\"requires tool: YouTube API\", \"requires tool: MyFitnessPal API\", \"cannot be completed\"]"
+    },
+    "scenario9": {
+        "type": "success",
+        "response": "[\"requires tool: AskNews\", \"requires tool: Airtable API\", \"cannot be completed\"]"
+    },
+    "scenario10": {
+        "type": "success",
+        "response": "[\"requires tool: CoinGecko API\", \"requires tool: Google BigQuery API\", \"cannot be completed\"]"
+    },
+    "scenario11": {
+        "type": "success",
+        "response": "[\"requires tool: Google Maps API\", \"requires tool: Google Maps API\"]"
+    },
+    "scenario12": {
+        "type": "success",
+        "response": "[\"requires tool: Google Trends\", \"requires tool: LinkedIn API\", \"requires tool: Google Trends\", \"requires tool: LinkedIn API\"]"
+    },
+    "scenario13": {
+        "type": "success",
+        "response": "[\"requires tool: Apple HealthKit\", \"no tool\", \"requires tool: MyFitnessPal API\", \"requires tool: Apple HealthKit\"]"
+    },
+    "scenario14": {
+        "type": "success",
+        "response": "[\"requires tool: Twitter API\", \"requires tool: Natural Language API\", \"no tool\", \"cannot be completed\"]"
+    },
+    "scenario15": {
+        "type": "success",
+        "response": "[\"requires tool: Spotify API\", \"requires tool: YouTube API\", \"requires tool: YouTube API\", \"cannot be completed\"]"
+    },
+    "scenario16": {
+        "type": "success",
+        "response": "[\"requires tool: AWS S3 API\", \"requires tool: Azure Container Apps\", \"requires tool: Azure Container Apps\", \"cannot be completed\"]"
+    },
+    "scenario17": {
+        "type": "success",
+        "response": "[\"requires tool: NASA Toolkit\", \"requires tool: NASA Toolkit\", \"no tool\", \"requires tool: Twilio\"]"
+    },
+    "scenario18": {
+        "type": "success",
+        "response": "[\"requires tool: Passio NutritionAI\", \"requires tool: CDP\", \"requires tool: Twilio\", \"requires tool: IBM Watson API\"]"
+    },
+    "scenario19": {
+        "type": "success",
+        "response": "[\"requires tool: Jina Search\", \"requires tool: Memorize\", \"requires tool: NVIDIA Riva: ASR and TTS\"]"
+    },
+    "scenario20": {
+        "type": "success",
+        "response": "[\"requires tool: Upstage\", \"requires tool: ScrapeGraph\", \"requires tool: Cloudflare API\", \"no tool\"]"
+    },
+    "scenario21": {
+        "type": "success",
+        "response": "[\"requires tool: Nuclia Understanding\", \"requires tool: NVIDIA Riva: ASR and TTS\", \"requires tool: Office365 Toolkit\"]"
+    },
+    "scenario22": {
+        "type": "success",
+        "response": "[\"requires tool: Jenkins\", \"requires tool: Github Toolkit\", \"cannot be completed\"]"
+    },
+    "scenario23": {
+        "type": "success",
+        "response": "[\"requires tool: Tavily Search\", \"requires tool: Ionic Shopping Tool\", \"requires tool: GraphQL\", \"requires tool: Office365 Toolkit\"]"
+    },
+    "scenario24": {
+        "type": "success",
+        "response": "[\"requires tool: Robocorp Toolkit\", \"no tool\", \"requires tool: Infobip\", \"requires tool: Robocorp Toolkit\"]"
+    },
+    "scenario25": {
+        "type": "success",
+        "response": "[\"requires tool: Semantic Scholar API Tool\", \"requires tool: ScrapeGraph\", \"no tool\"]"
+    },
+    "scenario26": {
+        "type": "success",
+        "response": "[\"requires tool: SQLDatabase Toolkit\", \"requires tool: Spark SQL Toolkit\", \"requires tool: SQLDatabase Toolkit\", \"cannot be completed\"]"
+    },
+    "scenario27": {
+        "type": "success",
+        "response": "[\"requires tool: PubMed\", \"requires tool: SceneXplain\", \"requires tool: SceneXplain\", \"requires tool: ScrapeGraph\"]"
+    },
+    "scenario28": {
+        "type": "success",
+        "response": "[\"requires tool: Dall-E Image Generator\", \"requires tool: Google Lens\", \"no tool\", \"requires tool: Cogniswitch Toolkit\"]"
+    },
+    "scenario29": {
+        "type": "success",
+        "response": "[\"requires tool: SearxNG Search\", \"requires tool: Salesforce\", \"requires tool: Salesforce\", \"no tool\"]"
+    },
+    "scenario30": {
+        "type": "success",
+        "response": "[\"requires tool: OpenWeatherMap\", \"cannot be completed\", \"no tool\"]"
+    }
+}
