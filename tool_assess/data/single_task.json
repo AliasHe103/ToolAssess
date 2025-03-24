@@ -474,7 +474,7 @@
       "IBM Watson API": "Provides AI-powered NLP, image recognition, and business process automation."
     },
     "result": "requires tool",
-    "solving_tool": "Airtable API"
+    "solving_tool": "Python REPL"
   },
   "op47": {
     "query": "I am a small business owner, I wonder if you can do something to promote my products. Tell me your advice.",
