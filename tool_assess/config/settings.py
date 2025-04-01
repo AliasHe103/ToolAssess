@@ -17,11 +17,11 @@ available_models = [
     # open-source
     "deepseek-r1",
     "deepseek-v3",
-    "qwen-max",
     "qwen2.5-7b-instruct-1m",
     "llama-3.2-3B",
     "llama-3.3-70B",
     # closed-source
+    "qwen-max",
     "gpt-4o",
     "o1",
     "glm-4-plus",

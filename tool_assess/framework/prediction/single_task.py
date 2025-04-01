@@ -49,7 +49,7 @@ def assess_single_task(agent, system_prompt):
         query = sample["query"]
         tools = json.dumps(sample["tools"], indent=2)
 
-        print(f"Assessing {op_id}.")
+        print(f"Assessing {op_id}...")
         messages = [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": f"Query: {query}\nAvailable Tools: {tools}"}

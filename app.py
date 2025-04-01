@@ -3,13 +3,19 @@ import streamlit as st
 import json
 import pandas as pd
 import altair as alt
+from PIL import Image
 
 from tool_assess.config import settings
 from tool_assess.config.settings import model_name
 
-st.title("Tool Assess Benchmark Result")
-st.write(f"Displaying test results of {model_name}")
+logo_path = os.path.join("assets", "ToolAssess.png")
+if os.path.exists(logo_path):
+    logo = Image.open(logo_path)
+    st.image(logo, use_container_width=True, caption="ToolAssess Benchmark Results\n"
+             + "https://github.com/AliasHe103/ToolAssess")
 
+st.title("ToolAssess Benchmark Results")
+st.write(f"Displaying test results of {model_name}")
 output_path = settings.ASSESS_SCORE_PATH
 if not os.path.exists(output_path):
     os.makedirs(output_path)
@@ -26,19 +32,22 @@ for name, score in data.items():
 
 df = pd.DataFrame(model_scores)
 
+st.subheader("Detailed ToolAssess Scores")
+st.dataframe(df)
+
 chart = (
     alt.Chart(df)
     .mark_bar()
     .encode(
         x=alt.X("Model:N", sort="-y", title="Model Name"),
-        y=alt.Y("Score:Q", title="Test Score"),
+        y=alt.Y("Score:Q", title="TAS"),
         color=alt.value("steelblue"),
         tooltip=["Model", "Score"]
     )
     .properties(
         width=800,
         height=400,
-        title="Tool Assessment Scores of All Agents"
+        title="Tool Assessment Scores of All Models"
     )
 )
 
@@ -54,10 +63,10 @@ detailed_scores = []
 for model, scores in detailed_data.items():
     detailed_scores.append({
         "Model": model,
-        "Task 1": scores[0],
-        "Task 2": scores[1],
-        "Task 3": scores[2],
-        "Task 4": scores[3]
+        "ST-TUS": scores[0],
+        "ST-TSS": scores[1],
+        "MT-TUS": scores[2],
+        "MT-TSS": scores[3]
     })
 
 df_detailed = pd.DataFrame(detailed_scores)

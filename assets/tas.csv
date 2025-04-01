@@ -1,0 +1,11 @@
+﻿,Model,Score
+0,deepseek-r1,75.78
+1,deepseek-v3,72.6
+2,qwen-max,68.28
+3,gpt-4o,73.73
+4,o1,76.57
+5,qwen2.5-7b-instruct-1m,63.45
+6,glm-4-plus,71.83
+7,Baichuan4-Turbo,56.01
+8,llama-3.3-70B,59.77
+9,llama-3.2-3B,46.61

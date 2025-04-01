@@ -15,13 +15,13 @@ def make_multi_task_prompt(rule=""):
     You are tasked with helping the User handle multiple tasks in a scenario.
     For each sub-task, you are provided with a toolset containing tool names and descriptions.
     You should determine if a tool is needed for that sub-task.
-    
+
     ## Response Format
     Your response **must** strictly follow one of these three formats for each sub-task:
     1. "requires tool: [Tool Name]" → If the sub-task **must and can** be completed with a tool, **select only one** from the provided list.
     2. "no tool" → If the sub-task can be **completed without any tool**.
     3. "cannot be completed" → If the sub-task is **impossible even with the provided tools**, for example, you need other tools but they are not listed.
-    
+
     ## Rules
     1. If multiple tools seem relevant, **only select the single most suitable** one.
     2. **Do not** include any extra explanation or reasoning.
@@ -31,11 +31,13 @@ def make_multi_task_prompt(rule=""):
     {rule}
     """
 
+
 def extract_sub_tasks(tasks):
     sub_tasks = []
     for task_id, task_data in tasks.items():
         sub_tasks.append(task_data["query"])
     return sub_tasks
+
 
 def assess_multi_task(agent, system_prompt):
     for scenario_id, scenario_data in scenarios.items():
@@ -72,7 +74,7 @@ def assess_multi_task(agent, system_prompt):
                 "type": "success",
                 "response": response
             }
-            print(response)
+            # print(response)
 
         except Exception as e:
             print(f"Error on {scenario_id}: {e}.")
@@ -82,30 +84,36 @@ def assess_multi_task(agent, system_prompt):
                 "response": response
             }
 
+
 def assess_on_deepseek_multi():
     deepseek_agent = DeepseekAgent(name="deepseek-chat")
     system_prompt = make_multi_task_prompt()
     assess_multi_task(agent=deepseek_agent, system_prompt=system_prompt)
+
 
 def assess_on_openai_multi():
     gpt_agent = GPTAgent(model_name)
     system_prompt = make_multi_task_prompt()
     assess_multi_task(agent=gpt_agent, system_prompt=system_prompt)
 
+
 def assess_on_openai_compatible_multi(key, url, rule=""):
     compatible_agent = CompatibleAgent(key, url, model_name)
     system_prompt = make_multi_task_prompt(rule)
     assess_multi_task(agent=compatible_agent, system_prompt=system_prompt)
+
 
 def assess_on_qwen_multi(rule=""):
     qwen_agent = QwenAgent(model_name)
     system_prompt = make_multi_task_prompt(rule)
     assess_multi_task(agent=qwen_agent, system_prompt=system_prompt)
 
+
 def assess_on_together_multi(rule=""):
     together_agent = TogetherAgent(model_name)
     system_prompt = make_multi_task_prompt(rule)
     assess_multi_task(agent=together_agent, system_prompt=system_prompt)
+
 
 multi_task_file = settings.MULTI_TASK_DATA_PATH  # Path to multi-task scenarios
 output_path = settings.MULTI_TASK_OUTPUT_PATH  # Path to save the results
